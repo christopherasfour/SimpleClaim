@@ -16,6 +16,7 @@ end
 
 # for Heroku deployment - as described in Ap. A of ELLS book
 group :development, :test do
+  gem "bcrypt", "~> 3.1.1"
   gem 'byebug'
   gem 'database_cleaner'
   gem 'cucumber-rails', require: false
@@ -29,6 +30,5 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg', '~> 0.2'
   gem 'rails_12factor'
 end
