@@ -1,6 +1,7 @@
 # Add a declarative step here for populating the DB with movies.
 # USER STORIES GO HERE 
 
+
 #We should write steps for creating a claim, (name, age, type of claim, ...)
 
 # Given /the following movies exist/ do |movies_table|
