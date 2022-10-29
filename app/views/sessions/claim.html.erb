@@ -7,6 +7,6 @@
   <%= label :claim, :lname, 'Last Name:', :class => 'col-form-label'  %>
   <%= text_field :claim, :lname, :class => 'form-control' %>
   <%= label :claim, :bday, 'Birthday:', :class => 'col-form-label'  %>
-  <%= text_field :claim, :bday, :class => 'form-control' %>
+  <%= date_field :claim, :bday, :class => 'form-control' %>
   <%= submit_tag 'Create New Claim', :class => 'btn btn-primary' %>
 <% end %>
