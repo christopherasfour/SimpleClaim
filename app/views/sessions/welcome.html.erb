@@ -1,4 +1,11 @@
 <h1>Welcome</h1>
 <% if logged_in? %>
     <h1>You are Logged In, <%= current_user.username %></h1>
-<%end%>
+
+    <%= button_to "New", action: "new" %>
+    # => "<form method="post" class="button_to">
+    #      <button type="submit">File a Small Claim</button>
+    #      <input name="authenticity_token" type="hidden" value="10f2163b45388899ad4d5ae948988266befcb6c3d1b2451cf657a0c293d605a6"/>
+    #    </form>"
+
+<% end %>

@@ -1,4 +1,4 @@
-class LoinController < ApplicationController
+class LoginController < ApplicationController
 
 
 end

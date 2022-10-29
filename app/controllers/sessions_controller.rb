@@ -24,4 +24,10 @@ class SessionsController < ApplicationController
 
   def page_requires_login
   end
+
+  def fileClaim
+  end
+
+  def createClaim
+  end
 end
