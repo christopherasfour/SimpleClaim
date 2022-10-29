@@ -10,7 +10,7 @@
   <%= date_field :claim, :bday, :class => 'form-control' %>
   <%= label :claim, :claimTypes, 'Select the type of claim you will be filing', :class => 'col-form-label' %>
   <%= select :claim, :claimTypes, [
-        "Select Option",
+        "Pick",
         "Breach of contract disputes",
         "Personal injury claims (such as dog bites)",
         "Collection on debts or loan repayments",
@@ -22,7 +22,7 @@
         "False arrest claims",
         "Libel or slander cases",
         "Counterclaims to a lawsuit"
-    ], {}, {:class => 'form-control col-1'} %>
+    ], {:style => 'width:200px !important'}, {:class => 'form-control col-1'} %>
   <%= label :claim, :description, 'Describe more about your particular case:', :class => 'col-form-label' %>
   <%= text_area :claim, :description, :class => 'form-control', :required => true %>
   <%= submit_tag 'Create New Claim', :class => 'btn btn-success' %>
