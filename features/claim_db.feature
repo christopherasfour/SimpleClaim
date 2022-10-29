@@ -1,4 +1,4 @@
-Feature: store claim information in db for lawyers to see
+Feature: Store claim information in db for lawyers to see
 
   As a lawyer
   So that I can quickly browse claims appropriate for me to work on
