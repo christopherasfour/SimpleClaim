@@ -1,8 +1,8 @@
 Feature: login to application
 
-  As a movie buff
-  So that I can find movies with my favorite director
-  I want to include and search on director information in movies I enter
+  As a new client
+  So that I can file a small claim
+  I want to first login to the application
 
 Background: logins in database
 
