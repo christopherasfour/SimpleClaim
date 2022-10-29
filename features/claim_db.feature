@@ -27,4 +27,3 @@ Scenario: lawyer finding recent cases
   And I press the "My Cases" button
   And I press the "Recent Only" button
   Then  I should see "Claim Title #1"
-  And   I should see "Claim Title #3"
