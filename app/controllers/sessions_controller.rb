@@ -3,6 +3,7 @@ require 'bcrypt'
 class SessionsController < ApplicationController
   
   def new
+    @claim = Claim.new
   end
 
   def create
