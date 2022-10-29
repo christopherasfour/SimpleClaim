@@ -1,6 +1,17 @@
 # Add a declarative step here for populating the DB with movies.
 # USER STORIES GO HERE 
 
+Given /the following claims exist/ do |claims_table|
+    claims_table.hashes.each do |claim|
+      # each returned element will be a hash whose key is the table header.
+      # you should arrange to add that movie to the database here.
+    end
+    Movie.create claim
+  end
+  
+  Then /(.*) seed movies should exist/ do | n_seeds |
+    expect(Claim.count).to eq n_seeds.to_i
+  end
 
 #We should write steps for creating a claim, (name, age, type of claim, ...)
 
