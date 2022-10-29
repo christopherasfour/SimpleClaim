@@ -12,6 +12,16 @@ Scenario: Seeing the homepage for the SimpleClaim website.
 
 Scenario: Start the claim process. 
   Given I visit "/welcome"  
-  And I press the "claim" button
+  And I press the "Claim" button
   Then I should see "Claim" page
 
+Scenario: Write a the claim process. 
+  Given I visit "/welcome"  
+  And I press the "Claim" button
+  And  I fill in "Title" with "Test Claim Title"
+  And  I fill in "Name" with "Bob Joe"
+  And  I fill in "Lawyer" with "Harvey Specter"
+  And  I fill in "Description" with "generic description"
+  And  I press the "Submit My Claim" button
+  Then I should see "My Claims" page
+  And I should see "Test Claim Title"
