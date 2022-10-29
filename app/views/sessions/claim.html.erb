@@ -22,7 +22,7 @@
         "False arrest claims",
         "Libel or slander cases",
         "Counterclaims to a lawsuit"
-    ], {}, {:class => 'form-control col-1'} %>
+    ], {}, {:class => 'form-control col-1'} :required => true :style => "width:70px" %>
   <%= label :claim, :description, 'Describe more about your particular case:', :class => 'col-form-label' %>
   <%= text_area :claim, :description, :class => 'form-control', :required => true %>
   <%= submit_tag 'Create New Claim', :class => 'btn btn-success' %>
