@@ -6,5 +6,9 @@ Rails.application.routes.draw do
   get 'authorized', to: 'sessions#page_requires_login'
   get 'claim', to:  'sessions#claim'
   post 'claim', to: 'sessions#claim'
+
+  resources :claim
+  # map '/' to be a redirect to '/claim'
+  root :to => redirect('/claim')
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

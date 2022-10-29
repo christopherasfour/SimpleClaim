@@ -1,5 +1,12 @@
 <h1>File a Small Claim</h1>
 <br>
-<%= form_for @claim do |form| %>
-    Form contents
-<% end %>  
+
+<%= form_tag movies_path, :class => 'form' do %>
+  <%= label :claim, :fname, 'First Name:', :class => 'col-form-label' %>
+  <%= text_field :claim, :fname, :class => 'form-control' %>
+  <%= label :claim, :lname, 'Last Name:', :class => 'col-form-label'  %>
+  <%= text_field :claim, :lname, :class => 'form-control' %>
+  <%= label :claim, :bday, 'Birthday:', :class => 'col-form-label'  %>
+  <%= text_field :claim, :bday, :class => 'form-control' %>
+  <%= submit_tag 'Create New Claim', :class => 'btn btn-primary' %>
+<% end %>
