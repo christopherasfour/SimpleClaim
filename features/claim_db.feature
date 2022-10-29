@@ -22,7 +22,7 @@ Scenario: lawyer finding all their cases
   Then  I should see "Claim Title #1"
   And   I should see "Claim Title #3"
 
-Scenario: lawyer finding all their cases
+Scenario: lawyer finding recent cases
   And I login as "Saul Goodman"
   And I press the "My Cases" button
   And I press the "Recent Only" button
