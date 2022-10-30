@@ -33,6 +33,6 @@ end
 private
 # To make clear which methods respond to requests, and which ones do not.
 def lawyer_params
-    params.require(:lawyer).permit(:fname, :lname, :bday, :location, :education, :winRate, :aboutMe, :lawyer_id)
+    params.require(:lawyer).permit(:fname, :lname, :bday, :location, :education, :winRate, :aboutMe)
 end
 end
