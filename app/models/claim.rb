@@ -1,5 +1,5 @@
 class Claim < ActiveRecord::Base
-    belongs_to :lawyer, foreign_key: 'lawyer_id'
+    belongs_to :lawyer
     def self.types
         [
             "Pick",
