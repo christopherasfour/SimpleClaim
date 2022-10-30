@@ -1,5 +1,5 @@
 class Claim < ActiveRecord::Base
-    belongs_to: lawyer
+    belongs_to :lawyer
     def self.types
         [
             "Pick",
@@ -17,4 +17,3 @@ class Claim < ActiveRecord::Base
         ]
     end
 end
-  

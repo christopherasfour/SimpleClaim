@@ -1,5 +1,5 @@
 class Lawyer < ActiveRecord::Base
-    has_many: claims
+    has_many :claims
 end
 
 
