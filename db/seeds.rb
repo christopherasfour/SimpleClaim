@@ -6,16 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-claims = [
-  { fname: 'Christopher', lname: 'Asfour', bday: '21-Jul-1989', claimTypes: 'Breach of contract disputes', description: 'Testing testing', lawyer_id: 101 },
-  { fname: 'Luke', lname: 'Cage', bday: '21-Jul-1990', claimTypes: 'Pick', description: 'Testing 123', lawyer_id: 102 },
-  { fname: 'Richard', lname: 'Mike', bday: '21-Aug-1989', claimTypes: 'Pick', description: 'Testing 1111', lawyer_id: 103 },
-
-]
-
-claims.each do |claim|
-  Claim.create!(claim)
-end
 
 lawyers = [
   { fname: 'Jason', lname: 'Lonet', bday: '21-Apr-1989', location: 'Simi Valley', education: 'Columbia University', winRate: 89.10 , aboutMe: "My name is Jason. Hello!", lawyer_id: 101},
@@ -27,3 +17,13 @@ lawyers.each do |lawyer|
   Lawyer.create!(lawyer)
 end
 
+claims = [
+  { fname: 'Christopher', lname: 'Asfour', bday: '21-Jul-1989', claimTypes: 'Breach of contract disputes', description: 'Testing testing', requestLawyer: 101 },
+  { fname: 'Luke', lname: 'Cage', bday: '21-Jul-1990', claimTypes: 'Pick', description: 'Testing 123', requestLawyer: 102 },
+  { fname: 'Richard', lname: 'Mike', bday: '21-Aug-1989', claimTypes: 'Pick', description: 'Testing 1111', requestLawyer: 103 },
+
+]
+
+claims.each do |claim|
+  Claim.create!(claim)
+end
