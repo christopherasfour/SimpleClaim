@@ -1,9 +1,9 @@
 class ClaimController < ApplicationController 
-  def new
-  end
-
   def index
     @claim = Claim.all
+  end
+
+  def new
   end
 
   def show
