@@ -14,9 +14,9 @@ class ClaimController < ApplicationController
     @claim = post.new(params[:post])
 
     if @claim.save
-      redirect_to claims_path,  :notice => "Your post was saved"
+      redirect_to "https://www.google.com",  :notice => "Your post was saved"
     else
-      render "new"
+      render "https://www.bing.com"
       end
   end
 
