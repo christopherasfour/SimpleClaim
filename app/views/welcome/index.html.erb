@@ -25,9 +25,9 @@
           <%= claim.description %>
         </td>
         <td>
-            <% if claim.lawyer.present? %>
-                <%= claim.lawyer.lawyer_id %>
-            <% end %>
+        <% if claim.lawyers_id.present? %>
+            <%= Lawyer.find(claim.lawyers_id).fname %>
+        <% end %>
         </td>
       </tr>
     <% end %>
