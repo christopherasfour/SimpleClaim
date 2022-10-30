@@ -25,7 +25,8 @@
           <%= claim.description %>
         </td>
         <td>
-          <%= claim.lawyer.lawyer_id %>
+        <% if claim.lawyer.present? %>
+            <%= claim.lawyer.lawyer_id %>
         </td>
       </tr>
     <% end %>
