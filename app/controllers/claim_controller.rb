@@ -3,7 +3,7 @@ class ClaimController < ApplicationController
   end
 
   def index
-    @claims = Claim.all
+    @claim = Claim.all
   end
 
   def show
@@ -11,7 +11,7 @@ class ClaimController < ApplicationController
   end
 
   def create
-    @claim = Claim.create!(claims_params)
+    @claim = Claim.create!(claim_params)
     flash[:notice] = "Claim of type #{@claim.claimTypes} was successfully created."
     redirect_to '/welcome'   
   end
@@ -22,7 +22,7 @@ class ClaimController < ApplicationController
 
   def update
     @claim = Claim.find params[:id]
-    @claim.update_attributes!(claims_params)
+    @claim.update_attributes!(claim_params)
     flash[:notice] = "#{@claim.claimTypes} was successfully updated."
     redirect_to '/welcome'
   end
@@ -33,7 +33,7 @@ class ClaimController < ApplicationController
 
   private
   # To make clear which methods respond to requests, and which ones do not.
-  def claims_params
+  def claim_params
     params.require(:claim).permit(:fname, :lname, :bday, :claimTypes, :description)
 end
 end
