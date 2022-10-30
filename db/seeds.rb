@@ -17,3 +17,13 @@ claims.each do |claim|
   Claim.create!(claim)
 end
 
+lawyers = [
+  { fname: 'Jason', lname: 'Lonet', bday: '21-Apr-1989', location: 'Simi Valley', education: 'Columbia University', winRate: 89.10 , aboutMe: "My name is Jason. Hello!", lawyer_id: 101},
+  { fname: 'Mark', lname: 'Smith', bday: '21-Aug-1999', location: 'Jacksonville', education: 'Harvard University', winRate: 75.55, aboutMe: "Hello everyone! My name is Mark", lawyer_id: 102},
+  { fname: 'Justin', lname: 'Fields', bday: '11-Sep-2005', location: 'Redville', education: 'Cornell University', winRate: 95.11, aboutMe: "Whats up everyone!", lawyer_id: 103},
+]
+
+lawyers.each do |lawyer|
+  Lawyer.create!(lawyer)
+end
+
