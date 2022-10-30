@@ -2,3 +2,28 @@
 <h1>Welcome to Simple Claim</h1>
 <br>
 <%= link_to 'Start a Small Claim', claim_path, :class => 'btn btn-primary' %>
+
+<table class="table table-striped col-md-12" id="claims">
+  <thead>
+    <tr>
+      <th>Claim ID</th>
+      <th>Claim Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @claim.each do |claim| %>
+      <tr>
+        <td>
+          <%= claim.id %>
+        </td>
+        <td>
+          <%= claim.claimTypes %>
+        </td>
+        <td>
+          <%= claim.description %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
