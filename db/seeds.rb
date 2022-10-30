@@ -6,19 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-movies = [
-  { title: 'Aladdin', rating: 'G', release_date: '25-Nov-1992' },
-  { title: 'The Terminator', rating: 'R', release_date: '26-Oct-1984' },
-  { title: 'When Harry Met Sally', rating: 'R', release_date: '21-Jul-1989' },
-  { title: 'The Help', rating: 'PG-13', release_date: '10-Aug-2011' },
-  { title: 'Chocolat', rating: 'PG-13', release_date: '5-Jan-2001' },
-  { title: 'Amelie', rating: 'R', release_date: '25-Apr-2001' },
-  { title: '2001: A Space Odyssey', rating: 'G', release_date: '6-Apr-1968' },
-  { title: 'The Incredibles', rating: 'PG', release_date: '5-Nov-2004' },
-  { title: 'Raiders of the Lost Ark', rating: 'PG', release_date: '12-Jun-1981' },
-  { title: 'Chicken Run', rating: 'G', release_date: '21-Jun-2000' },
+claims = [
+  { fname: 'Christopher', lname: 'Asfour', bday: '21-Jul-1989', claimType: 'Breach of contract disputes', description: 'Testing testing' },
+  { fname: 'Luke', lname: 'Cage', bday: '21-Jul-1990', claimType: 'Pick', description: 'Testing 123' },
+  { fname: 'Richard', lname: 'Mike', bday: '21-Aug-1989', claimType: 'Pick', description: 'Testing 1111' },
+
 ]
 
-movies.each do |movie|
-  Movie.create!(movie)
+claims.each do |claim|
+  Claim.create!(claim)
 end
