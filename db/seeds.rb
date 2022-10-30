@@ -19,13 +19,12 @@ lawyers.each do |lawyer|
   ids = ids.append(lawyer.id)
 end
 
-claims = [
-  { fname: 'Christopher', lname: 'Asfour', bday: '21-Jul-1989', claimTypes: 'Breach of contract disputes', description: 'Testing testing', lawyer: Lawyer.find_by(id: ids[0]) },
-  { fname: 'Luke', lname: 'Cage', bday: '21-Jul-1990', claimTypes: 'Pick', description: 'Testing 123', lawyer: Lawyer.find_by(id: ids[1]) },
-  { fname: 'Richard', lname: 'Mike', bday: '21-Aug-1989', claimTypes: 'Pick', description: 'Testing 1111', lawyer: Lawyer.find_by(id: ids[2]) },
+# claims = [
+#   { fname: 'Christopher', lname: 'Asfour', bday: '21-Jul-1989', claimTypes: 'Breach of contract disputes', description: 'Testing testing', lawyer: Lawyer.find_by(id: ids[0]) },
+#   { fname: 'Luke', lname: 'Cage', bday: '21-Jul-1990', claimTypes: 'Pick', description: 'Testing 123', lawyer: Lawyer.find_by(id: ids[1]) },
+#   { fname: 'Richard', lname: 'Mike', bday: '21-Aug-1989', claimTypes: 'Pick', description: 'Testing 1111', lawyer: Lawyer.find_by(id: ids[2]) },
+# ]
 
-]
-
-claims.each do |claim|
-  Claim.create!(claim)
-end
+# claims.each do |claim|
+#   Claim.create!(claim)
+# end
