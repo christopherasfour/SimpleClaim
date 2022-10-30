@@ -24,8 +24,8 @@
         "Counterclaims to a lawsuit"
     ], {:style => 'width:200px !important'}, {:class => 'form-control col-1'} %>
 
-  <%= label :claim, :requestLawyer, 'Select an advising lawyer', :class => 'col-form-label' %>
-  <%= select :claim, :requestLawyer, Lawyer.all.collect { |lwyer| [lwyer.fname + " " + lwyer.lname, lwyer.id] }, {:style => 'width:200px !important'}, {:class => 'form-control col-1'} %>
+  <%= label :claim, :lawyer_id, 'Select an advising lawyer', :class => 'col-form-label' %>
+  <%= select :claim, :lawyer_id, Lawyer.all.collect { |lwyer| [lwyer.fname + " " + lwyer.lname, lwyer.id] }, {:style => 'width:200px !important'}, {:class => 'form-control col-1'} %>
   <%= label :claim, :description, 'Describe more about your particular case:', :class => 'col-form-label' %>
   <%= text_area :claim, :description, :class => 'form-control', :required => true %>
   <%= submit_tag 'Create New Claim', :class => 'btn btn-success' %>
