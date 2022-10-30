@@ -5,9 +5,11 @@ Rails.application.routes.draw do
   get 'home', :to => "welcome#index"
   root :to => "welcome#index"
   get 'claim/new', to: 'sessions#claim'
+  post 'claim', to: 'welcome#index'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   get 'welcome', to: 'sessions#welcome'
+  post 'welcome', to: 'welcome#index'
   get 'authorized', to: 'sessions#page_requires_login'
   get 'claim', to:  'sessions#claim'
   post 'claim', to: 'sessions#claim'
