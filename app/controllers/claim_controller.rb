@@ -1,6 +1,5 @@
-class ClaimsController < ApplicationController 
+class ClaimController < ApplicationController 
   def new
-    @claim = Claim.new
   end
 
   def index
@@ -37,4 +36,5 @@ class ClaimsController < ApplicationController
   # To make clear which methods respond to requests, and which ones do not.
   def claims_params
     params.require(:claim).permit(:fname, :lname, :description, :birthday)
+end
 end
