@@ -1,7 +1,7 @@
 <h1>File a Small Claim</h1>
 <br>
 
-<%= form_tag claim_path, :class => 'form' do %>
+<%= form_tag '/welcome', :class => 'form' do %>
   <%= label :claim, :fname, 'First Name:', :class => 'col-form-label' %>
   <%= text_field :claim, :fname, :class => 'form-control', :required => true %>
   <%= label :claim, :lname, 'Last Name:', :class => 'col-form-label'  %>
@@ -25,5 +25,5 @@
     ], {:style => 'width:200px !important'}, {:class => 'form-control col-1'} %>
   <%= label :claim, :description, 'Describe more about your particular case:', :class => 'col-form-label' %>
   <%= text_area :claim, :description, :class => 'form-control', :required => true %>
-  <%= submit_tag 'Create New Claim', :class => 'btn btn-success' %>6345578f000cb1063ea4baa16a034
+  <%= submit_tag 'Create New Claim', :class => 'btn btn-success' %>
 <% end %>
