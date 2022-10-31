@@ -1,18 +1,19 @@
 require 'bcrypt'
 
 class SessionsController < ApplicationController
+  skip_before_action :authorized, only: [:create, :new]
   
   def new
   end
 
   def create
     @user = User.find_by(username: params[:username])
-    puts "resgister"
     if @user && @user.authenticate(params[:password])
         session[:user_id] = @user.id
         redirect_to '/welcome'
     else
         redirect_to '/login'
+        flash[:warning] = "invalid user name or password"
     end
   end
 

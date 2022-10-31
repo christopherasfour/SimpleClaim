@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  # before_action :authorized
+  before_action :authorized
   helper_method :current_user
   helper_method :logged_in?
 
@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authorized
-    redirect_to '/welcome' unless logged_in?
+    redirect_to '/login' unless logged_in?
   end
 
 end
