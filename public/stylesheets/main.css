@@ -11,8 +11,8 @@ max-width: 90%;
 max-width: 36%;
 }
 #claim_fname.form-control{
-max-width: 60%;
+max-width: 40%;
 }
 #claim_lname.form-control{
-max-width: 60%;
+max-width: 40%;
 }
