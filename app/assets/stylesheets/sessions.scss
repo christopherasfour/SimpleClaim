@@ -87,12 +87,12 @@ h1 {
 }
 
 .rwd-table {
-  background: #34495E;
+  background: #1f262d;
   color: #fff;
   border-radius: .4em;
   overflow: hidden;
   tr {
-    border-color: lighten(#34495E, 10%);
+    border-color: lighten(#343a40, 10%);
   }
   th, td {
     margin: .5em 1em;
@@ -101,6 +101,6 @@ h1 {
     }
   }
   th, td:before {
-    color: #dd5;
+    color: white;
   }
 }
