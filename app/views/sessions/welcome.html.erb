@@ -27,7 +27,7 @@
             </td>
             <td>
             <% if claim.lawyers_id.present? %>
-                <%= Lawyer.find(claim.lawyers_id).fname %>
+                <%= Lawyer.find(claim.lawyers_id).fname + " " + Lawyer.find(claim.lawyers_id).lname %>
             <% end %>
             </td>
         </tr>
