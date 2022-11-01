@@ -112,6 +112,9 @@ form label {
   vertical-align: top;
   line-height: 25px;
 }
+form.claimform {
+width: 55%;
+}
 form #submit {
   margin-left: 150px;
 }
