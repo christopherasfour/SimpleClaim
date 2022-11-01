@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
         redirect_to '/welcome'
     else
         redirect_to '/login'
-        flash[:warning] = "invalid user name or password"
+        flash[:warning] = "Invalid username or password. Please try again!"
     end
   end
 
