@@ -8,18 +8,18 @@
   <body>
     <div class="main-block">
       <div class="left-part">
-        <i class="fas fa-graduation-cap"></i>
+        <i class="fas fa-balance-scale" style='font-size:48px;color:red'></i>
         <h1>To get started with the small claims process</h1>
         <p>Sign up to get started</p>
         <div class="btn-group">
-          <a class="btn-item" href="https://www.w3docs.com/learn-html.html">FAQ</a>
-          <a class="btn-item" href="https://www.w3docs.com/quiz/#">PROCESS</a>
+          <a class="btn-item" href="#">FAQ</a>
+          <a class="btn-item" href="#">PROCESS</a>
         </div>
       </div>
       <div>
       <%= form_tag '/users', method: :post do%>
         <div class="title">
-          <i class="fas fa-pencil-alt"></i>
+          <i class="fas fa-gavel"></i>
           <h2>Register here</h2>
         </div>
         <div class="info">
@@ -30,9 +30,6 @@
             <%= f.password_field :password%><br>
             <%= f.submit %>
           <%end%>
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" name="checkbox"><span>I agree to the <a href="https://www.w3docs.com/privacy-policy">Privacy Policy for SimpleClaim.</a></span>
         </div>
         <%end%>
     </div>
