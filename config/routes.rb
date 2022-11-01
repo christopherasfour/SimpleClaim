@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'register', to: 'users#new'
   post 'login', to: 'sessions#create'
   get 'login', to: 'sessions#new'
+  delete 'login', to: 'sessions#destroy'
 
   get 'welcome', to: 'sessions#welcome'
   post 'welcome', to: 'claim#create'

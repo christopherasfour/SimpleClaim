@@ -1,7 +1,7 @@
 require 'bcrypt'
 
 class SessionsController < ApplicationController
-  skip_before_action :authorized, only: [:create, :new]
+  skip_before_action :authorized, only: [:create, :new, :destroy]
   
   def new
   end
@@ -15,6 +15,11 @@ class SessionsController < ApplicationController
         redirect_to '/login'
         flash[:warning] = "Invalid username or password. Please try again!"
     end
+  end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to '/login'
   end
 
   def login
