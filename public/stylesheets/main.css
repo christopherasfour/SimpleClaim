@@ -1,3 +1,18 @@
 form.claimform {
 width: 55%;
 }
+#claim_lawyers_id.form-control.col-1{
+max-width: 36%;
+}
+#claim_claimTypes.form-control.col-1{
+max-width: 90%;
+}
+#claim_bday.form-control{
+max-width: 36%;
+}
+#claim_fname.form-control{
+max-width: 60%;
+}
+#claim_lname.form-control{
+max-width: 60%;
+}
