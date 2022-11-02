@@ -5,39 +5,39 @@ Feature: register new account in application
   I want to create a new account in the application 
 
 Scenario: user enters register page
-  Given I visit "/login"
-  And I press the "Create a new client account button" button
-  Then I should see the "/register" page
+  Given I go to /login
+  When I press "Create a new account"
+  Then I should be on ./register
 
 Scenario: user does not enter password in register page
-  Given I visit "/login"
-  And I press the "Create a new client account button" button
-  And I should see the "/register" page
-  When I enter "tester" in the "Password" field
-  And I press the "Create User" button
-  Then I should not see the "/welcome" page
+  Given I go to /login
+  When I press "Create a new account"
+  Then I should be on ./register
+  When I fill in "user_password" with "tester"
+  When I press "Create User"
+  Then I should be on ./welcome
 
 
 Scenario: user does not enter username in register page
-  Given I visit "/login"
-  And I press the "Create a new client account button" button
-  And I should see the "/register" page
-  When I enter "Bob" in the "Username" field
-  And I press the "Create User" button
-  Then I should not see the "/welcome" page
+  Given I go to /login
+  And I press "Create a new account"
+  And I should be on ./register
+  When I fill in "user_username" with "Bob"
+  And I press "Create User"
+  Then I should be on ./register
 
 Scenario: user does not fill any field in register page
-  Given I visit "/login"
-  And I press the "Create a new client account button" button
-  And I should see the "/register" page
-  And I press the "Create User" button
-  Then I should see the "/login" page
+  Given I go to /login
+  And I press "Create a new account"
+  And I should be on ./register
+  And I press "Create User" 
+  Then I should be on ./register
 
 Scenario: user login is successful
-    Given I visit "/login"
-    And I press the "Create a new client account button" button
-    And I should see the "/register" page
-    When I enter "Bob" in the "Username" field
-    And I enter "tester" in the "Password" field
-    And I press the "Create User" button
-    Then I should see the "/welcome" page
+    Given I go to /login
+    When I press "Create a new account" 
+    And I should be on ./register
+    When I fill in "user_username" with "Bob"
+    And I fill in "user_password" with "tester"
+    And I press "Create User"
+    Then I should be on ./welcome

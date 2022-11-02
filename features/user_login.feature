@@ -6,25 +6,25 @@ Feature: login to application
 
 
 Scenario: user does not enter username
-  Given I visit "/login"
-  When I enter "tester" in the "Password" field
-  And I press the "Login" button
-  Then I should not see "/welcome" page
+  When I go to /login
+  When I fill in "password" with "tester"
+  When I press "Login"
+  Then I should be on ./login
 
 Scenario: user does not enter password
-  Given I visit "/login"
-  When I enter "Bob" in the "username" field
-  And I press the "login" button
-  Then I should not see "/welcome" page
+  When I go to /login
+  When I fill in "username" with "Bob"
+  When I press "Login"
+  Then I should be on "./login"
 
 Scenario: user does not fill any field
-  Given I visit "/login"
-  And I press the "login" button
-  Then I should not see "/welcome" page
+  When I go to /login
+  When I press "Login"
+  Then I should be on ./login
 
 Scenario: user login is successful
-    Given I visit "/login"
-    When I enter "Bob" in the "username" field
-    And I enter "tester" in the "password" field
-    And I press the "login" button
-    Then I should see the "Welcome" page
+  When I go to /login
+  When I fill in "username" with "Bob"
+  When I fill in "password" with "tester"
+  When I press "Login"
+  Then I should be on "./login/"

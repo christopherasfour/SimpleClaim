@@ -9,7 +9,7 @@ Given /the following claims exist/ do |claims_table|
     Movie.create claim
   end
   
-  Then /(.*) seed movies should exist/ do | n_seeds |
+  Then /(.*) seed claims should exist/ do | n_seeds |
     expect(Claim.count).to eq n_seeds.to_i
   end
 
