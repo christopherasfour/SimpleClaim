@@ -13,7 +13,7 @@ class ClaimController < ApplicationController
   def create
     @claim = Claim.create!(claim_params)
     flash[:notice] = "Claim of type #{@claim.claimTypes} was successfully created."
-    redirect_to '/welcome'   
+    redirect_to '/claim'   
   end
 
   def edit
@@ -24,7 +24,7 @@ class ClaimController < ApplicationController
     @claim = Claim.find params[:id]
     @claim.update_attributes!(claim_params)
     flash[:notice] = "#{@claim.claimTypes} was successfully updated."
-    redirect_to '/welcome'
+    redirect_to '/claim'
   end
 
   def destroy

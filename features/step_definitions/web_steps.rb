@@ -32,9 +32,9 @@ end
 World(WithinHelpers)
 
 # Single-line step scoper
-When /^(.*) within (.*[^:])$/ do |step, parent|
-  with_scope(parent) { When step }
-end
+# When /^(.*) within (.*[^:])$/ do |step, parent|
+#   with_scope(parent) { When step }
+# end
 
 # Multi-line step scoper
 When /^(.*) within (.*[^:]):$/ do |step, parent, table_or_string|
@@ -119,6 +119,13 @@ end
 Then /^(?:|I )should not see \/([^\/]*)\/$/ do |regexp|
   regexp = Regexp.new(regexp)
   assert page.has_no_xpath?('//*', :text => regexp)
+end
+
+Given(/^A logged in user$/) do
+  visit "/login"
+  fill_in "username", :with => "sebhastien@gibosse.com"
+  fill_in "password", :with => "123456"
+  click_button "Login"
 end
 
 Then /^the "([^"]*)" field(?: within (.*))? should contain "([^"]*)"$/ do |field, parent, value|

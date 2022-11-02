@@ -34,10 +34,10 @@ Scenario: user does not fill any field in register page
   Then I should be on ./register
 
 Scenario: user login is successful
-    Given I go to /login
-    When I press "Create a new account"
-    And I should be on ./register
-    When I fill in "user_username" with "Bob"
-    And I fill in "user_password" with "tester"
-    And I press "Create User"
-    Then I should be on ./welcome
+  Given I go to /login
+  When I press "Create a new account"
+  And I should be on ./register
+  When I fill in "user_username" with "Bob"
+  And I fill in "user_password" with "tester"
+  And I press "Create User"
+  Then I should be on ./welcome

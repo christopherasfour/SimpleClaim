@@ -1,18 +1,20 @@
 # Add a declarative step here for populating the DB with movies.
 # USER STORIES GO HERE 
+Given /the following lawyers exist/ do |lawyers_table|
+  lawyers_table.hashes.each do |lawyer|
+    Lawyer.create lawyer
+  end
+end
 
 Given /the following claims exist/ do |claims_table|
     claims_table.hashes.each do |claim|
-      # each returned element will be a hash whose key is the table header.
-      # you should arrange to add that movie to the database here.
+      Claim.create claim
     end
-    Movie.create claim
   end
   
   Then /(.*) seed claims should exist/ do | n_seeds |
     expect(Claim.count).to eq n_seeds.to_i
   end
-
 #We should write steps for creating a claim, (name, age, type of claim, ...)
 
 # Given /the following movies exist/ do |movies_table|
@@ -71,7 +73,6 @@ Given /the following claims exist/ do |claims_table|
 #   page.driver.debugger
 #   1
 # end
-
 
 # Then /complete the rest of of this scenario/ do
 #   # This shows you what a basic cucumber scenario looks like.

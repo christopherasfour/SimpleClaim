@@ -17,6 +17,7 @@ def create
 
 def edit
     @lawyer = lawyer.find(params[:id])
+
 end
 
 def update

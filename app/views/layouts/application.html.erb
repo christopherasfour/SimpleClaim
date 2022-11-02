@@ -14,7 +14,10 @@
       <div class="row">
         <h1 class="title">SimpleClaim</h1>
         <% if logged_in? %>
-          <%= link_to "<button>Log out</button>".html_safe, "/login", :method=> "delete", :id=>"open-contacts-dialog-btn", :class=>"inbox-sf-add-btn tip" %>
+          <%= form_tag 'login', method: :delete do%>
+            <button class="float-left submit-button" >Log out</button>
+          </form>
+          <%end%>
         <% end %>
     </nav>
     <div class="container">
