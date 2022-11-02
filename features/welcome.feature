@@ -33,7 +33,7 @@ Scenario: user can go to claim form page
   And I fill in "user_password" with "tester"
   And I press "Create User"
   Then I should be on ./welcome
-  When I press "Start a Small Claim"
+  When I follow "Start a Small Claim"
   Then I should be on "/claim" page
 
 Scenario: user can see previous claims
