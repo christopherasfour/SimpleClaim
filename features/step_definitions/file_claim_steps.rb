@@ -1,9 +1,17 @@
 # Add a declarative step here for populating the DB with movies.
 # USER STORIES GO HERE 
+
 Given /the following lawyers exist/ do |lawyers_table|
   lawyers_table.hashes.each do |lawyer|
     Lawyer.create lawyer
   end
+end
+
+Given /a existing user with username (.*) and password (.*)/ do |username, password|
+  visit "register"
+  fill_in "user_username", :with => username
+  fill_in "user_password", :with => password
+  click_button("Create User")
 end
 
 Given /the following claims exist/ do |claims_table|

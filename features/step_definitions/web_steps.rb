@@ -121,12 +121,6 @@ Then /^(?:|I )should not see \/([^\/]*)\/$/ do |regexp|
   assert page.has_no_xpath?('//*', :text => regexp)
 end
 
-Given(/^A logged in user$/) do
-  visit "/login"
-  fill_in "username", :with => "sebhastien@gibosse.com"
-  fill_in "password", :with => "123456"
-  click_button "Login"
-end
 
 Then /^the "([^"]*)" field(?: within (.*))? should contain "([^"]*)"$/ do |field, parent, value|
   with_scope(parent) do
