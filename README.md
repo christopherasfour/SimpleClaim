@@ -2,9 +2,9 @@ COMS 4252 SaaS Project Iteration #1
 
 Names:
 Christopher Asfour (cra2139)
-...
-...
-...
+Richard Dongsoo Han (dh3062)
+Han-Ju Tsai: ht2572
+Sameer Khanna (stk2137)
 
 
 Instructions to run and test our product for iteration #1:
