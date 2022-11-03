@@ -1,4 +1,4 @@
-class CreateLawyers < ActiveRecord::Migration
+class CreateLawyers < ActiveRecord::Migration[4.2]
     def change
         create_table :lawyers do |t|
             t.string :fname
