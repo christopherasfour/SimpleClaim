@@ -253,7 +253,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  bcrypt (~> 3.1.1)
+  bcrypt (~> 3.1.7)
   byebug
   cucumber-rails
   database_cleaner
