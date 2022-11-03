@@ -1,4 +1,4 @@
-class CreateClaims < ActiveRecord::Migration[4.2]
+class CreateClaims < ActiveRecord::Migration
     def change
         create_table :claims do |t|
             t.string :fname

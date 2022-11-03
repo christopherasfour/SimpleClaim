@@ -1,4 +1,4 @@
-class CreateLawyerAuths < ActiveRecord::Migration[4.2]
+class CreateLawyerAuths < ActiveRecord::Migration
     def change
         create_table :lawyerAuth do |t|
             t.string :username
