@@ -31,7 +31,7 @@ end
 # for Heroku deployment - as described in Ap. A of ELLS book
 group :development, :test do
   gem 'factory_girl_rails', '~> 3.3.0'
-  gem "bcrypt", "~> 3.1.1"
+  gem 'bcrypt', '~> 3.1.7'
   gem 'byebug'
   gem 'database_cleaner'
   gem 'cucumber-rails', require: false
