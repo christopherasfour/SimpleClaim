@@ -132,7 +132,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.13.9-x86_64-linux)
       racc (~> 1.4)
-    pg (1.4.4)
+    pg (0.21.0)
     protobuf-cucumber (3.10.8)
       activesupport (>= 3.2)
       middleware
@@ -253,7 +253,7 @@ DEPENDENCIES
   database_cleaner
   factory_girl_rails (~> 3.3.0)
   jquery-rails
-  pg
+  pg (~> 0.18)
   pry
   pry-byebug
   rails (= 4.2.11)
