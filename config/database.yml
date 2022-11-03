@@ -21,7 +21,7 @@ test: &test
 production:
   adapter: postgresql
   database: <%= ENV['DATABASE_URL'] %>
-  pool: 5
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") {5} %>
   timeout: 5000
 
 cucumber:
