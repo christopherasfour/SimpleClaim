@@ -1,6 +1,7 @@
 # This is a common gitignore which includes many files
 # That could be included by various Rails dependencies
 # This file is maintained by GitHub: https://github.com/github/gitignore
+.DS_Store
 path/
 *.rbc
 capybara-*.html

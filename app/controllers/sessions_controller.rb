@@ -22,18 +22,18 @@ class SessionsController < ApplicationController
     redirect_to '/login'
   end
 
-  def login
-  end
+  # def login
+  # end
 
-  def welcome
-  end
+  # def welcome
+  # end
 
-  def page_requires_login
-  end
+  # def page_requires_login
+  # end
 
-  def fileClaim
-  end
+  # def fileClaim
+  # end
 
-  def createClaim
-  end
+  # def createClaim
+  # end
 end
