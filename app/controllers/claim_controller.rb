@@ -11,8 +11,6 @@ class ClaimController < ApplicationController
   end
 
   def create
-    puts "claim params"
-    puts claim_params
     @claim = Claim.create!(claim_params)
     flash[:notice] = "Claim of type #{@claim.claimTypes} was successfully created."
     redirect_to '/claim'   
