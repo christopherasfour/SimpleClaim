@@ -8,6 +8,7 @@ class CreateClaims < ActiveRecord::Migration
             t.string :description
             t.references :lawyers, foreign_key: true
             t.timestamps null: false
+            t.references :users, foreign_key: true
         end
     end
 end

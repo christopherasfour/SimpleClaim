@@ -13,7 +13,7 @@ class ClaimController < ApplicationController
   def create
     @claim = Claim.create!(claim_params)
     flash[:notice] = "Claim of type #{@claim.claimTypes} was successfully created."
-    redirect_to '/claim'   
+    redirect_to '/welcome'   
   end
 
   # def edit
@@ -33,6 +33,6 @@ class ClaimController < ApplicationController
   private
   # To make clear which methods respond to requests, and which ones do not.
   def claim_params
-    params.require(:claim).permit(:fname, :lname, :bday, :claimTypes, :description, :lawyers_id)
-end
+    params.require(:claim).permit(:fname, :lname, :bday, :claimTypes, :description, :lawyers_id, :users_id).merge(users_id: session[:user_id])
+  end
 end

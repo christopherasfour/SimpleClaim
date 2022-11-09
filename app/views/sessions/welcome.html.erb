@@ -14,7 +14,7 @@
         </tr>
     </thead>
     <tbody>
-        <% Claim.all.each do |claim| %>
+        <% Claim.where(users_id: session[:user_id]).each do |claim| %>
         <tr>
             <td>
             <%= claim.id %>
@@ -35,7 +35,6 @@
     </tbody>
     </table>
 
-    
 <% end %>
 
 
