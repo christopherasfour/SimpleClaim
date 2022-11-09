@@ -22,7 +22,7 @@ RSpec.describe ClaimController do
 
         it "does not save the new contact" do
           expect { 
-            post :create, {claim: { fname: 'Christopher', lname: 'Asfour', bday: '21-Jul-1989', claimTypes: 'Breach of contract disputes', description: 'Testing testing', lawyers_id: 1 }}
+            post :create, {claim: {fname: 'Christopher', lname: 'Asfour', bday: '21-Jul-1989', claimTypes: 'Breach of contract disputes', description: 'Testing testing', lawyers_id: 1}}
           }.to change(Claim, :count).by(0)
         end
       end 

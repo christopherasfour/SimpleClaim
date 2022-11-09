@@ -1,7 +1,7 @@
 require 'bcrypt'
 
 class SessionsController < ApplicationController
-  skip_before_action :authorized, only: [:create, :new, :destroy, :welcome]
+  skip_before_action :authorized, only: [:create, :new, :destroy]
   
   def new
   end
