@@ -26,14 +26,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authorized
-    if !logged_in?
-      redirect_to '/login' unless logged_in?
-    elsif !lawyer_logged_in?
-      redirect_to '/login_lawyer' unless lawyer_logged_in?
-    else
-      redirect_to '/index'
-    end
-    # redirect_to '/login' unless logged_in? or lawyer_logged_in?
+    redirect_to '/login' unless logged_in? or lawyer_logged_in?
   end
 end
 

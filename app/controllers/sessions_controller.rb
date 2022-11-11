@@ -1,7 +1,7 @@
 require 'bcrypt'
 
 class SessionsController < ApplicationController
-  skip_before_action :authorized, only: [:create, :new, :destroy, :login_lawyer]
+  skip_before_action :authorized, only: [:create, :new, :destroy, :login_lawyer, :create_lawyer]
   
   def new
   end
@@ -19,7 +19,9 @@ class SessionsController < ApplicationController
 
   def create_lawyer
     @lawyer = Lawyer.find_by(username: params[:username])
+    puts "call login lawyer"
     if @lawyer && @lawyer.authenticate(params[:password])
+        puts "authenticate the lawyer"
         session[:lawyer_id] = @lawyer.id
         redirect_to '/welcome_lawyer'
     else
