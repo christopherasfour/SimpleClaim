@@ -8,6 +8,8 @@ class CreateLawyers < ActiveRecord::Migration
             t.string :education
             t.float :winRate
             t.string :aboutMe
+            t.string :username
+            t.string :password_digest
             t.timestamps null: false
         end
     end

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SimpleClaim User Login</title>
+    <title>SimpleClaim Lawyer Login</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   </head>
@@ -17,10 +17,10 @@
         </div>
       </div>
       <div>
-      <%= form_tag "/login_lawyer", method: :post do%>
+      <%= form_tag '/login_lawyer', method: :post do%>
         <div class="title">
           <i class="fas fa-gavel"></i>
-          <h2>Client Login</h2>
+          <h2>Lawyer Login</h2>
         </div>
         <div class="info">
           <%= label_tag :username%>
@@ -31,8 +31,8 @@
         <%= submit_tag "Login"%>
         <%end%>
       </form>
-      <%= form_tag register_path, method: :get do%>
-        <button class="float-left submit-button" >Create a new client account</button>
+      <%= form_tag 'register_lawyer', method: :get do%>
+        <button class="float-left submit-button" >Create a new lawyer account</button>
       </form>
       <%end%>
       </div>

@@ -1,0 +1,45 @@
+<% if lawyer_logged_in? %>
+    #Depends on what we put for current user
+    <h1>Welcome <%= current_lawyer.username %></h1>
+
+    
+    <br>
+
+    <table class="rwd-table" id="claims">
+    <thead>
+        <tr>
+        <th align="center">Claim ID</th>
+        <th align="center">Claim Type</th>
+        <th align="center">Description</th>
+        <th aling="center">Decision?</th>
+        
+
+        </tr>
+    </thead>
+    <tbody>
+        <% Claim.where(users_id: session[:user_id]).each do |claim| %>
+        <tr>
+            <td>
+            <%= claim.id %>
+            </td>
+            <td>
+            <%= claim.claimTypes %>
+            </td>
+            <td>
+            <%= claim.description %>
+            </td>
+            <td>
+            # <% if claim.lawyers_id.present? %>
+            #     <%= Lawyer.find(claim.lawyers_id).fname + " " + Lawyer.find(claim.lawyers_id).lname %>
+            # <% end %>
+            <%= link_to 'Accept', "FILL OUT ACCEPT PATH", :class => 'btn btn-success' %>
+            <%= link_to 'Reject', "FILL OUT REJECT PATH", :class => 'btn btn-failure' %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+    </table>
+
+<% end %>
+
+
