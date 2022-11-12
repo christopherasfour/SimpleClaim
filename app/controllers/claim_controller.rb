@@ -16,16 +16,16 @@ class ClaimController < ApplicationController
     redirect_to '/welcome'   
   end
 
-  # def edit
-  #   @claim = Claim.find(params[:id])
-  # end
-
-  # def update
-  #   @claim = Claim.find params[:id]
-  #   @claim.update_attributes!(claim_params)
-  #   flash[:notice] = "#{@claim.claimTypes} was successfully updated."
-  #   redirect_to '/claim'
-  # end
+  def update
+    @claim = Claim.find (params[:id])
+    @claim.update(decision: params[:decision])
+    if (params[:decision] == "1")
+      flash[:notice] = "Awesome! You are now advising Claim ##{@claim.id} submitted by #{@claim.fname + " " + @claim.lname}."
+    elsif (params[:decision] == "2")
+      flash[:warning] = "You are not advising Claim #{@claim.id} anymore submitted by #{@claim.fname + " " + @claim.lname}."
+    end
+    redirect_to '/welcome_lawyer'
+  end
 
   # def destroy
   # end
@@ -33,6 +33,6 @@ class ClaimController < ApplicationController
   private
   # To make clear which methods respond to requests, and which ones do not.
   def claim_params
-    params.require(:claim).permit(:fname, :lname, :bday, :claimTypes, :description, :lawyers_id, :users_id).merge(users_id: session[:user_id])
+    params.require(:claim).permit(:claim_id, :fname, :lname, :bday, :claimTypes, :description, :lawyers_id, :users_id).merge(users_id: session[:user_id])
   end
 end

@@ -5,7 +5,7 @@ class Claim < ActiveRecord::Base
 
     def self.types
         [
-            "Pick",
+            "Loss Pick",
             "Breach of contract disputes",
             "Personal injury claims (such as dog bites)",
             "Collection on debts or loan repayments",

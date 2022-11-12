@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get 'claim/new', to: 'sessions#claim'
   post 'claim', to: 'sessions#welcome'
+  put '/claim' => 'claim#update'
+
   get 'register', to: 'users#new'
   post 'login', to: 'sessions#create'
   get 'login', to: 'sessions#new'

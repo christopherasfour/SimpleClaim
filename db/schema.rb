@@ -20,9 +20,10 @@ ActiveRecord::Schema.define(version: 20221030160037) do
     t.string   "claimTypes"
     t.string   "description"
     t.integer  "lawyers_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.integer  "users_id"
+    t.integer  "decision",    default: 0
   end
 
   create_table "lawyers", force: :cascade do |t|

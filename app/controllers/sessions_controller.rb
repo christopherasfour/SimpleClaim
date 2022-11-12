@@ -19,9 +19,7 @@ class SessionsController < ApplicationController
 
   def create_lawyer
     @lawyer = Lawyer.find_by(username: params[:username])
-    puts "call login lawyer"
     if @lawyer && @lawyer.authenticate(params[:password])
-        puts "authenticate the lawyer"
         session[:lawyer_id] = @lawyer.id
         redirect_to '/welcome_lawyer'
     else
@@ -31,8 +29,13 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
-    redirect_to '/login'
+    if not session[:user_id].nil?
+      session[:user_id] = nil
+      redirect_to '/login'
+    elsif not session[:lawyer_id].nil?
+      session[:lawyer_id] = nil
+      redirect_to '/login_lawyer'
+    end
   end
 
   def login_lawyer
