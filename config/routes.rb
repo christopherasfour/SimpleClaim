@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get 'claim/new', to: 'sessions#claim'
   post 'claim', to: 'sessions#welcome'
-  put '/claim' => 'claim#update'
+  put 'claim' => 'claim#update'
 
   get 'register', to: 'users#new'
   post 'login', to: 'sessions#create'
@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   post 'welcome', to: 'claim#create'
   get 'authorized', to: 'sessions#page_requires_login'
   get 'claim', to:  'sessions#claim'
+
   post 'claim', to: 'sessions#claim'
 
   get 'welcome_lawyer', to: 'sessions#lawyer_welcome'

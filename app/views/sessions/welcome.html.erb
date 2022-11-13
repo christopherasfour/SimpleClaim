@@ -8,6 +8,7 @@
     <thead>
         <tr>
         <th align="center">Claim ID</th>
+        <th align="center">Claim URL</th>
         <th align="center">Claim Type</th>
         <th align="center">Description</th>
         <th align="center">Advising Lawyer</th>
@@ -20,14 +21,21 @@
             <%= claim.id %>
             </td>
             <td>
+            <%= link_to 'View Claim' %>
+            </td>
+            <td>
             <%= claim.claimTypes %>
             </td>
             <td>
             <%= claim.description %>
             </td>
             <td>
-            <% if claim.lawyers_id.present? %>
+            <% if claim.lawyers_id.present? and claim.decision == 1 %>
                 <%= Lawyer.find(claim.lawyers_id).fname + " " + Lawyer.find(claim.lawyers_id).lname %>
+            <% elsif claim.lawyers_id.present? and claim.decision == 0 %>
+                <%= "Pending " + Lawyer.find(claim.lawyers_id).fname + " " + Lawyer.find(claim.lawyers_id).lname + " decision." %>
+            <% else %>
+                <%= "Rejected by " + Lawyer.find(claim.lawyers_id).fname + " " + Lawyer.find(claim.lawyers_id).lname %>
             <% end %>
             </td>
         </tr>

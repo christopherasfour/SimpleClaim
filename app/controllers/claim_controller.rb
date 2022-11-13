@@ -1,3 +1,4 @@
+
 class ClaimController < ApplicationController 
   def index
     @claim = Claim.all

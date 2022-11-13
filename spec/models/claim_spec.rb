@@ -5,7 +5,7 @@ RSpec.describe Claim do
     it 'returns all type' do
       expect(Claim.types).to eql(
         [
-          "Pick",
+          "Loss Pick",
           "Breach of contract disputes",
           "Personal injury claims (such as dog bites)",
           "Collection on debts or loan repayments",
