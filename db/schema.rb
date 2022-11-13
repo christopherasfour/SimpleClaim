@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -19,10 +18,10 @@ ActiveRecord::Schema.define(version: 20221030160037) do
     t.datetime "bday"
     t.string   "claimTypes"
     t.string   "description"
-    t.integer  "lawyers_id"
+    t.integer  "lawyers"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
-    t.integer  "users_id"
+    t.integer  "users"
     t.integer  "decision",    default: 0
   end
 
