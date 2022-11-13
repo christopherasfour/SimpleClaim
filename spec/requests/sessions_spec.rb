@@ -18,18 +18,4 @@ RSpec.describe SessionsController do
     end
   end
 
-  describe "GET /login" do
-    it "returns http success" do
-      get "/sessions/login"
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe "GET /welcome" do
-    it "returns http success" do
-      get :welcome
-      expect(response).to have_http_status(:success)
-    end
-  end
-
 end

@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20221030160038) do
     t.integer  "lawyers_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "users_id"
   end
 
   create_table "lawyerAuth", force: :cascade do |t|

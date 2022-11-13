@@ -21,7 +21,7 @@ Scenario: user fills no fields in the claim form page.
   And I follow "Start a Small Claim"
   Then I should be on ./claim
   When I press "Create New Claim"
-  Then I should be on ./claim
+  Then I should be on ./
 
 
 
