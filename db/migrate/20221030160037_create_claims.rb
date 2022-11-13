@@ -6,9 +6,9 @@ class CreateClaims < ActiveRecord::Migration[4.2]
             t.datetime :bday
             t.string :claimTypes
             t.string :description
-            t.references :lawyers, foreign_key: true
+            t.integer :lawyers_id
             t.timestamps null: false
-            t.references :users, foreign_key: true
+            t.integer :users_id
             t.integer :decision, default: 0
         end
     end
