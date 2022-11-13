@@ -31,11 +31,10 @@ class SessionsController < ApplicationController
   def destroy
     if not session[:user_id].nil?
       session[:user_id] = nil
-      redirect_to '/login'
     elsif session[:lawyer_id].nil?
       session[:lawyer_id] = nil
-      redirect_to '/login_lawyer'
     end
+    redirect_to '/'
   end
 
   def login_lawyer
