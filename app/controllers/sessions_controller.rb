@@ -32,8 +32,7 @@ class SessionsController < ApplicationController
     if not session[:user_id].nil?
       session[:user_id] = nil
       redirect_to '/login'
-    end
-    if not session[:lawyer_id].nil?
+    elsif session[:lawyer_id].nil?
       session[:lawyer_id] = nil
       redirect_to '/login_lawyer'
     end
