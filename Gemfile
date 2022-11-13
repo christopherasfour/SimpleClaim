@@ -24,6 +24,8 @@ gem 'themoviedb'
 gem 'tzinfo'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
+gem 'factory_bot_rails'
+gem 'devise'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
@@ -32,7 +34,6 @@ end
 
 # for Heroku deployment - as described in Ap. A of ELLS book
 group :development, :test do
-  gem 'factory_girl_rails', '~> 3.3.0'
   gem 'byebug'
   gem 'database_cleaner'
   gem 'cucumber-rails', require: false
