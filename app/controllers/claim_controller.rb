@@ -1,14 +1,13 @@
 
 class ClaimController < ApplicationController 
-  def index
-    @claim = Claim.all
-  end
+  # def index
+  #   @claim = Claim.all
+  # end
 
   def new
   end
 
   def show
-    @claim = Claim.find(params[:id])
   end
 
   def create

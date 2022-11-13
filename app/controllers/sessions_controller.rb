@@ -20,11 +20,11 @@ class SessionsController < ApplicationController
   def create_lawyer
     @lawyer = Lawyer.find_by(username: params[:username])
     if @lawyer && @lawyer.authenticate(params[:password])
-        session[:lawyer_id] = @lawyer.id
-        redirect_to '/welcome_lawyer'
+      session[:lawyer_id] = @lawyer.id
+      redirect_to '/welcome_lawyer'
     else
-        redirect_to '/login_lawyer'
-        flash[:warning] = "Invalid username or password. Please try again!"
+      redirect_to '/login_lawyer'
+      flash[:warning] = "Invalid username or password. Please try again!"
     end
   end
 
@@ -32,7 +32,8 @@ class SessionsController < ApplicationController
     if not session[:user_id].nil?
       session[:user_id] = nil
       redirect_to '/login'
-    elsif not session[:lawyer_id].nil?
+    end
+    if not session[:lawyer_id].nil?
       session[:lawyer_id] = nil
       redirect_to '/login_lawyer'
     end

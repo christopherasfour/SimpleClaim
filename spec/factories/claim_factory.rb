@@ -7,5 +7,6 @@ FactoryBot.define do
     claimTypes {'Loss Pick'}
     description {"Hello there everyone!"}
     lawyers_id {10}
+    users_id {10}
   end
 end
