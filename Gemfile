@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '>= 2.6.4', '< 3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.11.3'
+gem 'rails', '5.0.1'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -17,6 +17,7 @@ gem 'jquery-rails'
 # gem 'unicorn'
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'rails-controller-testing'
 
 gem 'themoviedb'
 
@@ -24,6 +25,8 @@ gem 'themoviedb'
 gem 'tzinfo'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
+gem 'factory_bot_rails'
+gem 'devise'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
@@ -32,7 +35,6 @@ end
 
 # for Heroku deployment - as described in Ap. A of ELLS book
 group :development, :test do
-  gem 'factory_girl_rails', '~> 3.3.0'
   gem 'byebug'
   gem 'database_cleaner'
   gem 'cucumber-rails', require: false

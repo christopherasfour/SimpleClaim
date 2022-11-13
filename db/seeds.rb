@@ -19,9 +19,9 @@ users.each do |user|
 end
 
 lawyers = [
-  { fname: 'Jason', lname: 'Lonet', bday: '21-Apr-1989', location: 'Simi Valley', education: 'Columbia University', winRate: 89.10 , aboutMe: "My name is Jason. Hello!"},
-  { fname: 'Mark', lname: 'Smith', bday: '21-Aug-1999', location: 'Jacksonville', education: 'Harvard University', winRate: 75.55, aboutMe: "Hello everyone! My name is Mark"},
-  { fname: 'Justin', lname: 'Fields', bday: '11-Sep-2005', location: 'Redville', education: 'Cornell University', winRate: 95.11, aboutMe: "Whats up everyone!"},
+  { fname: 'Jason', lname: 'Lonet', bday: '21-Apr-1989', location: 'Simi Valley', education: 'Columbia University', winRate: 89.10 , aboutMe: "My name is Jason. Hello!", username: 'laywer1', password: 'pass'},
+  { fname: 'Mark', lname: 'Smith', bday: '21-Aug-1999', location: 'Jacksonville', education: 'Harvard University', winRate: 75.55, aboutMe: "Hello everyone! My name is Mark", username: 'laywer2', password: 'word'},
+  { fname: 'Justin', lname: 'Fields', bday: '11-Sep-2005', location: 'Redville', education: 'Cornell University', winRate: 95.11, aboutMe: "Whats up everyone!", username: 'lawyer3', password: 'password'},
 ]
 
 ids = []

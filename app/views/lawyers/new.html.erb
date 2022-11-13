@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SimpleClaim User Registration form</title>
+    <title>SimpleClaim Lawyer Registration</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   </head>
@@ -17,17 +17,29 @@
         </div>
       </div>
       <div>
-      <%= form_tag '/users', method: :post do%>
+      <%= form_tag '/lawyers', method: :post do%>
         <div class="title">
           <i class="fas fa-gavel"></i>
           <h2>Register here</h2>
         </div>
         <div class="info">
-          <%= form_for @user do |f|%>
+          <%= form_for @lawyers do |f|%>
             <%= f.label :username%><br>
             <%= f.text_field :username%><br>
             <%= f.label :password%><br>
             <%= f.password_field :password%><br>
+            <%= f.label "First Name"%><br>
+            <%= f.text_field :fname%><br>
+            <%= f.label "Last Name"%><br>
+            <%= f.text_field :lname%><br>
+            <%= f.label "Birthday"%><br>
+            <%= f.date_field :bday%><br>
+            <%= f.label "Location"%><br>
+            <%= f.text_field :location%><br>
+            <%= f.label "Highest Education"%><br>
+            <%= f.text_field :education%><br>
+            <%= f.label "Win Rate of Cases"%><br>
+            <%= f.text_field :winRate%><br>
             <%= f.submit %>
           <%end%>
         </div>

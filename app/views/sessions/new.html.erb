@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Educational registration form</title>
+    <title>SimpleClaim User Login</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   </head>
@@ -12,15 +12,15 @@
         <h1>To get started with the small claims process</h1>
         <p>Sign up to get started</p>
         <div class="btn-group">
-          <a class="btn-item" href="#">FAQ</a>
-          <a class="btn-item" href="#">PROCESS</a>
+          <a class="btn-item" href="/login">Are you a client?</a>
+          <a class="btn-item" href="/login_lawyer">Are you a lawyer?</a>
         </div>
       </div>
       <div>
-      <%= form_tag '/login', method: :post do%>
+      <%= form_tag "/login", method: :post do%>
         <div class="title">
           <i class="fas fa-gavel"></i>
-          <h2>Login</h2>
+          <h2>Client Login</h2>
         </div>
         <div class="info">
           <%= label_tag :username%>
@@ -32,7 +32,7 @@
         <%end%>
       </form>
       <%= form_tag register_path, method: :get do%>
-        <button class="float-left submit-button" >Create a new account</button>
+        <button class="float-left submit-button" >Create a new client account</button>
       </form>
       <%end%>
       </div>

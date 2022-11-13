@@ -1,0 +1,58 @@
+<% if lawyer_logged_in? %>
+    <h1>Welcome <%= current_lawyer.username %></h1>
+    
+    <br>
+
+    <table class="rwd-table" id="claims">
+    <thead>
+        <tr>
+        <th align="center">Claim ID</th>
+        <th align="center">Claim URL</th>
+        <th align="center">Claim Type</th>
+        <th align="center">Description</th>
+        <th align="center">Decision?</th>
+        
+        
+        </tr>
+    </thead>
+    <tbody>
+        <% Claim.where(lawyers_id: session[:lawyer_id]).each do |claim| %>
+        <tr>
+            <td>
+            <%= claim.id%>
+            </td>
+            <td>
+            <%if claim.decision == 1 %>
+              <%= link_to 'View Claim' %>
+            <% end %>
+            </td>
+            <td>
+            <%= claim.claimTypes %>
+            </td>
+            <td>
+            <%= claim.description %>
+            </td>
+            <td>
+            <% if claim.decision == 0 %>
+                <%= form_tag claim_path, :id => 'accept_decision_form', method: :put do %>
+                    <%= hidden_field_tag :id, claim.id %>
+                    <%= hidden_field_tag :decision, 1%>
+                    <%= submit_tag 'Accept', name: nil, :class => 'btn btn-success'%>
+                <% end %>
+
+                <%= form_tag claim_path, :id => 'reject_decision_form', method: :put do %>
+                    <%= hidden_field_tag :id, claim.id %>
+                    <%= hidden_field_tag :decision, 2%>
+                    <%= submit_tag 'Reject', name: nil, :class => 'btn btn-danger'%>
+                <% end %>
+            <% end %>
+            </td>
+            
+        </tr>
+        <% end %>
+    </tbody>
+    </table>
+
+<% end %>
+
+

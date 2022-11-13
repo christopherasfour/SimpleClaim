@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SimpleClaim User Registration form</title>
+    <title>SimpleClaim Lawyer Login</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   </head>
@@ -12,26 +12,30 @@
         <h1>To get started with the small claims process</h1>
         <p>Sign up to get started</p>
         <div class="btn-group">
-          <a class="btn-item" href="#">FAQ</a>
-          <a class="btn-item" href="#">PROCESS</a>
+          <a class="btn-item" href="/login">Are you a client?</a>
+          <a class="btn-item" href="/login_lawyer">Are you a lawyer?</a>
         </div>
       </div>
       <div>
-      <%= form_tag '/users', method: :post do%>
+      <%= form_tag '/login_lawyer', method: :post do%>
         <div class="title">
           <i class="fas fa-gavel"></i>
-          <h2>Register here</h2>
+          <h2>Lawyer Login</h2>
         </div>
         <div class="info">
-          <%= form_for @user do |f|%>
-            <%= f.label :username%><br>
-            <%= f.text_field :username%><br>
-            <%= f.label :password%><br>
-            <%= f.password_field :password%><br>
-            <%= f.submit %>
-          <%end%>
+          <%= label_tag :username%>
+          <%= text_field_tag :username %>
+          <%= label_tag :password%>
+          <%= password_field_tag :password%>
         </div>
+        <%= submit_tag "Login"%>
         <%end%>
+      </form>
+      <%= form_tag 'register_lawyer', method: :get do%>
+        <button class="float-left submit-button" >Create a new lawyer account</button>
+      </form>
+      <%end%>
+      </div>
     </div>
   </body>
 </html>

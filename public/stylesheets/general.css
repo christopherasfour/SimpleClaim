@@ -118,3 +118,12 @@ width: 55%;
 form #submit {
   margin-left: 150px;
 }
+form.accept_decision_form {
+  width: 55%;
+  color:white;
+}
+
+form.reject_decision_form{
+  width: 55%;
+  color: white;
+}

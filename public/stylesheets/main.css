@@ -16,3 +16,11 @@ max-width: 40%;
 #claim_lname.form-control{
 max-width: 40%;
 }
+form.accept_decision_form {
+    width: 55%;
+    color:white;
+  }
+form.reject_decision_form{
+    width: 55%;
+    color: white;
+  }

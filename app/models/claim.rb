@@ -1,11 +1,11 @@
 class Claim < ActiveRecord::Base
     belongs_to :lawyer
     belongs_to :user
-    validates :description, presence: true
+    validates :fname, :lname, :bday, :claimTypes, :description, presence: true
 
     def self.types
         [
-            "Pick",
+            "Loss Pick",
             "Breach of contract disputes",
             "Personal injury claims (such as dog bites)",
             "Collection on debts or loan repayments",
