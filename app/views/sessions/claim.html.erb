@@ -30,7 +30,7 @@
   <%= label :claim, :description, 'Describe more about your particular case:', :class => 'col-form-label'%>
   <%= text_area :claim, :description, :class => 'form-control', :required => true %>
   <br>
-  <%= submit_tag 'Create New Claim', :class => 'btn btn-success' %>
+  <%= button_to 'Create New Claim', :class => 'btn btn-success' %>
 <% end %>
 
 <table class="table table-striped col-md-12" id="lawyers">

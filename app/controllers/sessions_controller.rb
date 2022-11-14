@@ -38,6 +38,7 @@ class SessionsController < ApplicationController
   end
 
   def login_lawyer
+    puts "login lawyer is hit"
   end
 
   # def welcome

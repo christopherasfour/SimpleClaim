@@ -7,12 +7,19 @@ Given /the following lawyers exist/ do |lawyers_table|
   end
 end
 
-Given /a existing user with username (.*) and password (.*)/ do |username, password|
-  visit "register"
-  fill_in "user_username", :with => username
-  fill_in "user_password", :with => password
-  click_button("Create User")
+Given /an existing user with username (.*) and password (.*)/ do |username, password|
+  visit "login"
+  fill_in "username", :with => username
+  fill_in "password", :with => password
+  click_button("Login")
 end
+
+Given /the following users exist/ do |users_table|
+  users_table.hashes.each do |user|
+    User.create user
+  end
+end
+
 
 Given /the following claims exist/ do |claims_table|
     claims_table.hashes.each do |claim|
@@ -20,9 +27,9 @@ Given /the following claims exist/ do |claims_table|
     end
   end
   
-  Then /(.*) seed claims should exist/ do | n_seeds |
-    expect(Claim.count).to eq n_seeds.to_i
-  end
+Then /(.*) seed claims should exist/ do | n_seeds |
+  expect(Claim.count).to eq n_seeds.to_i
+end
 #We should write steps for creating a claim, (name, age, type of claim, ...)
 
 # Given /the following movies exist/ do |movies_table|

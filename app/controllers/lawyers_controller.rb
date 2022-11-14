@@ -14,7 +14,8 @@ class LawyersController < ApplicationController
 
   def create
     @lawyers = Lawyer.create!(lawyer_params)
-    redirect_to '/welcome'
+    session[:lawyer_id] = @lawyers.id
+    redirect_to '/welcome_lawyer'
   end
 
   # def edit
