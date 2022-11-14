@@ -26,7 +26,7 @@ Rails.application.routes.draw do
 
   post 'lawyers', to: 'lawyers#create'
   get 'login_lawyer', to: 'sessions#login_lawyer'
-  post 'login_lawyer', to: 'sessions#create_lawyer'
+  post 'login_lawyer', to: 'sessons#create_lawyer'
   get 'register_lawyer', to: 'lawyers#new'
 
   resources :claim

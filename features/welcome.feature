@@ -20,7 +20,7 @@ Background: create a user
 
 Scenario: user is logged in
   Given I go to /login
-  When I press "Create a new account"
+  When I press "Create a new client account"
   And I should be on ./register
   When I fill in "user_username" with "Bob"
   And I fill in "user_password" with "tester"
@@ -30,7 +30,7 @@ Scenario: user is logged in
 
 Scenario: user can log out
   Given I go to /login
-  When I press "Create a new account"
+  When I press "Create a new client account"
   And I should be on ./register
   When I fill in "user_username" with "Bob"
   And I fill in "user_password" with "tester"
@@ -41,7 +41,7 @@ Scenario: user can log out
 
 Scenario: user can go to claim form page
   Given I go to /login
-  When I press "Create a new account"
+  When I press "Create a new client account"
   And I should be on ./register
   When I fill in "user_username" with "Bob"
   And I fill in "user_password" with "tester"
@@ -52,7 +52,7 @@ Scenario: user can go to claim form page
 
 Scenario: user can see previous claims
   Given I go to /login
-  When I press "Create a new account"
+  When I press "Create a new client account"
   And I should be on ./register
   When I fill in "user_username" with "Bob"
   And I fill in "user_password" with "tester"

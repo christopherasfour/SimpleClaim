@@ -31,7 +31,7 @@ module WithinHelpers
 end
 World(WithinHelpers)
 
-# Single-line step scoper
+# Single-line step scoperWhen I go to the homepage
 # When /^(.*) within (.*[^:])$/ do |step, parent|
 #   with_scope(parent) { When step }
 # end

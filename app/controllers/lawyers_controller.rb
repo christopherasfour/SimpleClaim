@@ -13,6 +13,7 @@ class LawyersController < ApplicationController
   # end
 
   def create
+    puts "create lawyer is hit"
     @lawyers = Lawyer.create!(lawyer_params)
     redirect_to '/welcome'
   end

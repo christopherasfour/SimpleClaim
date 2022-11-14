@@ -1,5 +1,4 @@
 Feature: login to application
-
   As a new client
   So that I can file a small claim
   I want to first login to the application

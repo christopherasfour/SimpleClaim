@@ -5,8 +5,11 @@ Feature: File a claim
   I want to file a claim in the claims form page
 
 Background: file a claim
+  Given the following users exists:
+  |id|username|password|
+  |1000|Bob|tester|
   Given the following lawyers exist:
-  |id|fname| lname | bday | location | education | winRate | aboutMe | created_at | updated_at |
+  |id|fname| lname | bday | location | education | winRate | aboutMe | created_at | updated_at | 
   |1|Jason|Lonet|1989-04-21 00:00:00.000000|Simi Valley|Columbia University|89.1|My name is Jason. Hello!|2022-11-02 14:28:27.397790|2022-11-02 14:28:27.397790|
   |2|Mark|Smith|1999-08-21 00:00:00.000000|Jacksonville|Harvard University|75.55|Hello everyone! My name is Mark|2022-11-02 14:28:27.400343|2022-11-02 14:28:27.400343|
   |3|Justin|Fields|2005-09-11 00:00:00.000000|Redville|Cornell University|95.11|Whats up everyone!|2022-11-02 14:28:27.401985|2022-11-02 14:28:27.401985|
