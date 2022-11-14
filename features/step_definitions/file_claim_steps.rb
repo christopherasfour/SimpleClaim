@@ -3,7 +3,7 @@
 
 Given /the following lawyers exist/ do |lawyers_table|
   lawyers_table.hashes.each do |lawyer|
-    Lawyer.create lawyer
+    Lawyer.create!(lawyer)
   end
 end
 
@@ -14,12 +14,18 @@ Given /an existing user with username (.*) and password (.*)/ do |username, pass
   click_button("Login")
 end
 
+Given /an existing lawyer with username (.*) and password (.*)/ do |username, password|
+  visit "login_lawyer"
+  fill_in "username", :with => username
+  fill_in "password", :with => password
+  click_button("Login")
+end
+
 Given /the following users exist/ do |users_table|
   users_table.hashes.each do |user|
     User.create user
   end
 end
-
 
 Given /the following claims exist/ do |claims_table|
     claims_table.hashes.each do |claim|

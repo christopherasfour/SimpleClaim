@@ -6,10 +6,10 @@ Feature: welcome dashboard is present
 Background: create a user
 
   Given the following lawyers exist:
-  |id|fname| lname | bday | location | education | winRate | aboutMe | created_at | updated_at |
-  |1|Jason|Lonet|1989-04-21 00:00:00.000000|Simi Valley|Columbia University|89.1|My name is Jason. Hello!|2022-11-02 14:28:27.397790|2022-11-02 14:28:27.397790|
-  |2|Mark|Smith|1999-08-21 00:00:00.000000|Jacksonville|Harvard University|75.55|Hello everyone! My name is Mark|2022-11-02 14:28:27.400343|2022-11-02 14:28:27.400343|
-  |3|Justin|Fields|2005-09-11 00:00:00.000000|Redville|Cornell University|95.11|Whats up everyone!|2022-11-02 14:28:27.401985|2022-11-02 14:28:27.401985|
+  |id|fname| lname | bday | location | education | winRate | aboutMe | username | password |
+  |1|Jason|Lonet|11/10/1990|Simi Valley|Columbia University|89.1|My name is Jason. Hello!| aaa | aaa |
+  |2|Mark|Smith|11/10/1990|Jacksonville|Harvard University|75.55|Hello everyone! My name is Mark| bbb | bbb | 
+  |3|Justin|Fields|11/10/1990|Redville|Cornell University|95.11|Whats up everyone!| ccc | ddd|
 
   Given the following claims exist:
   |id|fname| lname | bday | claimTypes | description | lawyers_id | created_at | updated_at |

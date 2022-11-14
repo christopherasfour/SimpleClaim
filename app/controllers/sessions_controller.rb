@@ -31,25 +31,13 @@ class SessionsController < ApplicationController
   def destroy
     if not session[:user_id].nil?
       session[:user_id] = nil
-    elsif session[:lawyer_id].nil?
+    elsif not session[:lawyer_id].nil?
       session[:lawyer_id] = nil
     end
     redirect_to '/'
   end
 
   def login_lawyer
-    puts "login lawyer is hit"
   end
 
-  # def welcome
-  # end
-
-  # def page_requires_login
-  # end
-
-  # def fileClaim
-  # end
-
-  # def createClaim
-  # end
 end

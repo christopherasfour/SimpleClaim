@@ -33,6 +33,6 @@ class ClaimController < ApplicationController
   private
   # To make clear which methods respond to requests, and which ones do not.
   def claim_params
-    params.require(:claim).permit(:claim_id, :fname, :lname, :bday, :claimTypes, :description, :lawyers_id, :users_id).merge(users_id: session[:user_id])
+    params.require(:claim).permit(:fname, :lname, :bday, :claimTypes, :description, :lawyers_id, :users_id).merge(users_id: session[:user_id])
   end
 end

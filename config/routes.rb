@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  # get 'welcome/index'
 
   resources :users, only: [:new, :create]
   get 'home', :to => "sessions#welcome"
   root :to => "index#index"
 
-  # get 'claim/new', to: 'sessions#claim'
   # post 'claim', to: 'sessions#welcome'
   put 'claim' => 'claim#update'
-  # post 'claim', to: 'claim#create'
+  post 'claim', to: 'claim#create'
 
   get 'register', to: 'users#new'
   post 'login', to: 'sessions#create'
