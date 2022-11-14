@@ -24,53 +24,6 @@ Scenario: user can see the claim form page.
   When I go to ./claim
   Then I should see "File a Small Claim"
 
-Scenario: user fills no fields in the claim form page.
-  Given an existing user with username Bob and password tester
- When I go to ./claim
-  When I press "Create New Claim"
-
-Scenario: user fills only first name in the claim form page.
-  Given an existing user with username Bob and password tester
-  When I go to ./claim
-  And I fill in "claim_fname" with "Bob"  
-  And I press "Create New Claim"
-  Then I should be on ./claim page
-
-Scenario: user fills only last name in the claim form page.
-  Given an existing user with username Bob and password tester
-  When I go to ./claim
-  And I fill in "claim_lname" with "Joe"  
-  And I press "Create New Claim"
-  Then I should be on ./claim page
-
-Scenario: user fills only birthday in the claim form page.
-  Given an existing user with username Bob and password tester
-  When I go to ./claim
-  And I fill in "claim_bday" with "11/10/1990"
-  When I press "Create New Claim"
-  Then I should be on ./claim page
-
-Scenario: user can log out in claim form page
-  Given an existing user with username Bob and password tester
-  When I go to ./claim
-  When I press "Log out"
-  Then I should be on ./login page
-
-Scenario: user fills only type of claim in the claim form page.
-  Given an existing user with username Bob and password tester
-  When I go to ./claim
-  And I select "False arrest claims" from "claim_claimTypes"
-  And I press "Create New Claim"
-  Then I should be on ./claim page
-
-Scenario: user fills only description in the claim form page.
-  Given an existing user with username Bob and password tester
-  When I go to ./claim
-  And  I fill in "claim_description" with "I need help filing a small claim"
-  And I press "Create New Claim"
-  Then I should be on ./claim page
-
-
 Scenario: user fills all fields in the claim process. 
   Given an existing user with username Bob and password tester
   When I go to ./claim
