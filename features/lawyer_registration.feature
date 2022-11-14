@@ -18,22 +18,6 @@ Scenario: lawyer enters register page
   When I press "Create a new lawyer account"
   Then I should be on ./register_lawyer
 
-Scenario: lawyer does not enter username in register page
-  Given I go to ./register_lawyer
-  When I fill in "lawyer_password" with "tester"
-  When I press "Create Lawyer"
-  Then I should be on ./register_lawyer
-
-
-Scenario: lawyer does not enter password in register page
-  Given I go to /login_lawyer
-  When I press "Create a new lawyer account"
-  And I should be on ./register_lawyer
-  When I fill in "lawyer_username" with "Bob"
-  And I press "Create Lawyer"
-  Then I should be on ./register_lawyer
-
-
 Scenario: lawyer registration is successful
   When I go to ./register_lawyer
   When I fill in "lawyer_username" with "Bob"
