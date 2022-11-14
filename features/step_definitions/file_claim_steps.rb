@@ -7,7 +7,7 @@ Given /the following lawyers exist/ do |lawyers_table|
   end
 end
 
-Given /a existing user with username (.*) and password (.*)/ do |username, password|
+Given /an existing user with username (.*) and password (.*)/ do |username, password|
   visit "login"
   fill_in "username", :with => username
   fill_in "password", :with => password

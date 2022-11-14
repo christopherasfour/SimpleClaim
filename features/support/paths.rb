@@ -12,7 +12,8 @@ module NavigationHelpers
   #
   def path_to(page_name)
     case page_name
-
+    
+    when /home/ then '/'
     when /^the (RottenPotatoes )?home\s?page$/ then '/'
     when /login_lawyer/ then '/login_lawyer'
     when /register_lawyer/ then '/register_lawyer'
