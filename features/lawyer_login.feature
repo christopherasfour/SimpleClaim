@@ -3,7 +3,6 @@ Feature: login to application
   So that I can file a small claim
   I want to first login to the application
 
-
 Scenario: lawyer does not enter username
   When I go to /login_lawyer
   When I fill in "password" with "tester"
@@ -38,4 +37,4 @@ Scenario: lawyer login is successful
   When I press "Login"
   Then I should be on "./welcome_lawyer"
   When I press "Log out"
-  Then I should be on "./login_lawyer"
+  Then I should be on home page

@@ -36,6 +36,10 @@ Given /the following claims exist/ do |claims_table|
 Then /(.*) seed claims should exist/ do | n_seeds |
   expect(Claim.count).to eq n_seeds.to_i
 end
+
+Then /I should see (.*) claimTypes/ do |num|
+  expect(Claim.types.length).to eq num.to_i
+end
 #We should write steps for creating a claim, (name, age, type of claim, ...)
 
 # Given /the following movies exist/ do |movies_table|

@@ -17,7 +17,6 @@ Scenario: user does not enter password in register page
   When I press "Create User"
   Then I should be on ./register
 
-
 Scenario: user does not enter username in register page
   Given I go to /login
   And I press "Create a new client account"

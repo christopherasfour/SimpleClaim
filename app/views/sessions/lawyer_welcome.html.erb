@@ -16,7 +16,7 @@
         </tr>
     </thead>
     <tbody>
-        <% Claim.where(lawyers_id: session[:lawyer_id]).each do |claim| %>
+        <% Claim.where(lawyers_id: session[:lawyer_id], decision: [0, 1]).each do |claim| %>
         <tr>
             <td>
             <%= claim.id%>

@@ -37,9 +37,9 @@ Scenario: user can log out
   And I press "Create User"
   Then I should be on ./welcome
   When I press "Log out"
-  Then I should be on ./login
+  Then I should be on home page
 
-Scenario: user can go to claim form page
+Scenario: user number one can go to claim form page
   Given I go to /login
   When I press "Create a new client account"
   And I should be on ./register
@@ -50,12 +50,14 @@ Scenario: user can go to claim form page
   When I follow "Start a Small Claim"
   Then I should be on "/claim" page
 
-Scenario: user can see previous claims
+Scenario: user number two can go to claim form page
   Given I go to /login
   When I press "Create a new client account"
   And I should be on ./register
-  When I fill in "user_username" with "Bob"
-  And I fill in "user_password" with "tester"
+  When I fill in "user_username" with "columbiauserone"
+  And I fill in "user_password" with "bearlions"
   And I press "Create User"
   Then I should be on ./welcome
-  And I should see "Breach of contract disputes"
+  When I follow "Start a Small Claim"
+  Then I should be on "/claim" page
+

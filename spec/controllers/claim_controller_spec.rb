@@ -83,6 +83,7 @@ RSpec.describe ClaimController, :type => :controller do
         expect(claim.decision).to eql(2)
       end
     end
+
     describe "POST create for user id 12" do
       context "with valid attributes" do
         it "is valid with valid attributes" do
