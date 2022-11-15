@@ -22,6 +22,17 @@ RSpec.describe SessionsController, :type => :controller do
         end
     end
 
+    describe "get view_claim" do
+      let!(:claim){
+        Claim.create(FactoryBot.attributes_for(:claim))
+      }
+      it 'should render the new template' do
+        allow_any_instance_of(ApplicationController).to receive(:logged_in?).and_return(true)
+        get :view_claim, {id: 1}
+        expect(response).to render_template('view_claim')
+      end
+    end
+    
   describe "DELETE create_lawyer" do
     context "" do
       it "logs out an user" do
@@ -36,4 +47,5 @@ RSpec.describe SessionsController, :type => :controller do
       end
     end
   end
+
 end

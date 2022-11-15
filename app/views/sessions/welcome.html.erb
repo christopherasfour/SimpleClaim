@@ -21,7 +21,7 @@
             <%= claim.id %>
             </td>
             <td>
-            <%= link_to 'Edit Claim'%>
+            <%= button_to 'Edit Claim', view_claim_path(claim), :method => :get, :class => 'btn btn-warning' %>
             </td>
             <td>
             <%= claim.claimTypes %>

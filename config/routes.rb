@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   post 'welcome', to: 'claim#create'
   get 'authorized', to: 'sessions#page_requires_login'
   get 'claim', to:  'sessions#claim'
+  
+  put 'claim/:id', to: 'claim#update_claim', as: 'update_claim'
+  get 'claim/:id', to: 'sessions#view_claim', as: 'view_claim'
 
   post 'claim', to: 'sessions#claim'
 
@@ -28,7 +31,7 @@ Rails.application.routes.draw do
   post 'login_lawyer', to: 'sessions#create_lawyer'
   get 'register_lawyer', to: 'lawyers#new'
 
-  resources :claim
+  # resources :claim
   # map '/' to be a redirect to '/claim'
   #root :to => redirect('/claim')
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

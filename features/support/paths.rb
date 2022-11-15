@@ -20,6 +20,7 @@ module NavigationHelpers
     when /login/ then '/login'
     when /welcome_lawyer/ then '/welcome_lawyer'
     when /welcome/ then '/welcome'
+    when /claim\/1/ then '/claim/1'    
     when /claim/ then '/claim'
     when /register/ then '/register'
 

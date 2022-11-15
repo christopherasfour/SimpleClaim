@@ -40,4 +40,11 @@ class SessionsController < ApplicationController
   def login_lawyer
   end
 
+  def view_claim
+    puts "view_claim is called"
+    @claim = Claim.find(params[:id])
+    puts @claim.id
+    puts @claim.description
+  end
+
 end

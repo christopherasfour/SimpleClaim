@@ -27,6 +27,12 @@ class ClaimController < ApplicationController
     redirect_to '/welcome_lawyer'
   end
 
+  def update_claim
+    @claim = Claim.find (params[:id])
+    @claim.update(claim_params)
+    redirect_to '/welcome'
+  end
+
   # def destroy
   # end
 

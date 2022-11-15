@@ -1,0 +1,63 @@
+<h1>Edit Claim</h1>
+<br>
+
+<%= stylesheet_link_tag 'main', media: 'all', 'data-turbolinks-track': 'reload'  %>
+<%= form_tag update_claim_path(@claim), method: :put, :class => 'claimform' do %>
+  <%= label :claim, :fname, 'First Name:', :class => 'col-form-label' %>
+  <%= text_field :claim, :fname, :class => 'form-control',  :required => true %>
+  <%= label :claim, :lname, 'Last Name:', :class => 'col-form-label'  %>
+  <%= text_field :claim, :lname, :class => 'form-control', :required => true %>
+  <%= label :claim, :bday, 'Birthday:', :class => 'col-form-label'  %>
+  <%= date_field :claim, :bday, :class => 'form-control', :required => true %>
+  <%= label :claim, :claimTypes, 'Select the type of claim you will be filing', :class => 'col-form-label' %>
+  <%= select :claim, :claimTypes, [
+        "Loss Pick",
+        "Breach of contract disputes",
+        "Personal injury claims (such as dog bites)",
+        "Collection on debts or loan repayments",
+        "Professional negligence claims (like bad car repairs)",
+        "Claims regarding the return of a renters security deposit or personal property",
+        "Issues with contractors or home remodels",
+        "Property damage claims",
+        "Claims involving eviction notices or unlawful eviction",
+        "False arrest claims",
+        "Libel or slander cases",
+        "Counterclaims to a lawsuit"
+    ], {:style => 'width:200px !important'}, {:class => 'form-control col-1'} %>
+
+  <%= label :claim, :lawyers_id, 'Select an advising lawyer', :class => 'col-form-label' %>
+  <%= select :claim, :lawyers_id, Lawyer.all.collect { |lwyer| [lwyer.fname + " " + lwyer.lname, lwyer.id] }, {:style => 'width:200px !important'}, {:class => 'form-control col-1'} %>
+  <%= label :claim, :description, 'Describe more about your particular case:', :class => 'col-form-label'%>
+  <%= text_area :claim, :description, :class => 'form-control', :required => true %>
+  <br>
+  <%= submit_tag 'Update Claim', :class => 'btn btn-success' %>
+<% end %>
+
+<table class="table table-striped col-md-12" id="lawyers">
+  <thead>
+    <tr>
+      <th>Lawyer ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>About Me</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% Lawyer.all.each do |lawyer| %>
+      <tr>
+        <td>
+          <%= lawyer.id %>
+        </td>
+        <td>
+          <%= lawyer.fname %>
+        </td>
+        <td>
+          <%= lawyer.lname %>
+        </td>
+        <td>
+          <%= lawyer.aboutMe %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

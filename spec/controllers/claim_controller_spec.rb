@@ -125,4 +125,19 @@ RSpec.describe ClaimController, :type => :controller do
         expect(claim.decision).to eql(2)
       end
     end
+
+    describe "PUT update claim description" do 
+      let(:claim) { FactoryBot.create(:claim) }
+      before(:each) do
+        session = { user_id: 12 }
+        allow_any_instance_of(SessionsController).to receive(:session).and_return(session)
+        allow_any_instance_of(ApplicationController).to receive(:logged_in?).and_return(true)
+        put :update_claim, id: claim.id, claim: {description: "updated description"}
+      end
+
+      it 'has updated description' do
+        claim.reload
+        expect(claim.description).to eql("updated description")
+      end
+    end
 end
