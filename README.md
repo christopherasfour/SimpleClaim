@@ -1,9 +1,13 @@
 ## COMS 4152 SaaS Project Iteration #2
 
 Group 2 Member Names:
+
 Christopher Asfour (cra2139)
+
 Richard Dongsoo Han (dh3062)
+
 Han-Ju Tsai: (ht2572)
+
 Sameer Khanna (stk2137)
 
 ## Branch for our iteration #2
