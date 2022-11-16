@@ -23,7 +23,7 @@
             </td>
             <td>
             <%if claim.decision == 1 %>
-              <%= link_to 'View Claim' %>
+              <%= button_to 'View Claim', view_claim_path(claim), :method => :get, :class => 'btn btn-info' %>
             <% end %>
             </td>
             <td>

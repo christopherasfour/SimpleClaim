@@ -1,4 +1,9 @@
+
+<% if not current_user.nil? %>
 <h1>Edit Claim</h1>
+<% else %>
+<h1>View Claim</h1>
+<% end %>
 <br>
 
 <%= stylesheet_link_tag 'main', media: 'all', 'data-turbolinks-track': 'reload'  %>
@@ -24,13 +29,19 @@
         "Libel or slander cases",
         "Counterclaims to a lawsuit"
     ], {:style => 'width:200px !important'}, {:class => 'form-control col-1'} %>
-
-  <%= label :claim, :lawyers_id, 'Select an advising lawyer', :class => 'col-form-label' %>
-  <%= select :claim, :lawyers_id, Lawyer.all.collect { |lwyer| [lwyer.fname + " " + lwyer.lname, lwyer.id] }, {:style => 'width:200px !important'}, {:class => 'form-control col-1'} %>
+  <% if @claim.decision == 1%>
+    <%= label :claim, :lawyers_id, 'Advising lawyer', :class => 'col-form-label' %>
+    <%= select :claim, :lawyers_id, Lawyer.all.collect { |lwyer| [lwyer.fname + " " + lwyer.lname, lwyer.id] }, {:style => 'width:200px !important'}, {:class => 'form-control col-1', :disabled => true}%>
+  <% else %>
+    <%= label :claim, :lawyers_id, 'Select an advising lawyer', :class => 'col-form-label' %>
+    <%= select :claim, :lawyers_id, Lawyer.all.collect { |lwyer| [lwyer.fname + " " + lwyer.lname, lwyer.id] }, {:style => 'width:200px !important'}, {:class => 'form-control col-1'} %>
+  <% end %>
   <%= label :claim, :description, 'Describe more about your particular case:', :class => 'col-form-label'%>
   <%= text_area :claim, :description, :class => 'form-control', :required => true %>
   <br>
-  <%= submit_tag 'Update Claim', :class => 'btn btn-success' %>
+  <% if not current_user.nil? %>
+    <%= submit_tag 'Update Claim', :class => 'btn btn-success' %>
+  <% end %>
 <% end %>
 
 <table class="table table-striped col-md-12" id="lawyers">

@@ -29,12 +29,12 @@ class ClaimController < ApplicationController
 
   def update_claim
     @claim = Claim.find (params[:id])
+    if @claim.decision != 1 and params[:lawyers_id] != @claim.lawyers_id
+      @claim.update(decision: 0)
+    end
     @claim.update(claim_params)
     redirect_to '/welcome'
   end
-
-  # def destroy
-  # end
 
   private
   # To make clear which methods respond to requests, and which ones do not.
