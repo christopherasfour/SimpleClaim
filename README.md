@@ -26,7 +26,7 @@ rake db:seed
 
 Ruby version: 2.6.6, Rails version: 5.0.1
 
-OS Environment: MacOS
+OS Environment: MacOS 12.6 Monterey
 
 Steps to build gemfile:
 
