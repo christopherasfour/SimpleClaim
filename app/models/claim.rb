@@ -3,6 +3,23 @@ class Claim < ActiveRecord::Base
     belongs_to :user
     validates :fname, :lname, :bday, :claimTypes, :description, presence: true
 
+    def progress_percentage
+      (progress_list.index(self.progress) + 1).to_f / progress_list.length() * 100
+    end
+
+    def progress_list
+      [
+        "Started claim",
+        "File a claim with the court",
+        "Send the filed claim to the defendant (serve to defendant)",
+        "Get a court date",
+        "Prepare your paperwork",
+        "Go to court",
+        "Get judgment (on day of or in a month)",
+        "Collect/pay restitution",
+      ]
+    end
+
     def self.types
         [
             "Loss Pick",

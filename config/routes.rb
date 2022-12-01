@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'claim', to:  'sessions#claim'
   
   put 'claim/:id', to: 'claim#update_claim', as: 'update_claim'
+  put 'claim_progress/:id', to: 'claim#update_claim_progress', as: 'update_claim_progress'
   get 'claim/:id', to: 'sessions#view_claim', as: 'view_claim'
 
   post 'claim', to: 'sessions#claim'

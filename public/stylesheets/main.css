@@ -7,6 +7,15 @@ max-width: 36%;
 #claim_claimTypes.form-control.col-1{
 max-width: 90%;
 }
+#claim_progress.form-control.col-1{
+  max-width: fit-content;
+}
+#form-control.col-1{
+  max-width: fit-content;
+}
+#claim_progress{
+  max-width: fit-content;
+}
 #claim_bday.form-control{
 max-width: 36%;
 }

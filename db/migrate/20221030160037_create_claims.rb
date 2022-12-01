@@ -10,6 +10,7 @@ class CreateClaims < ActiveRecord::Migration
             t.timestamps null: false
             t.integer :users_id
             t.integer :decision, default: 0
+            t.string :progress
         end
     end
 end

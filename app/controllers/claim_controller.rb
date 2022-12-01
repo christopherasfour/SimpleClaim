@@ -36,9 +36,15 @@ class ClaimController < ApplicationController
     redirect_to '/welcome'
   end
 
+  def update_claim_progress
+    @claim = Claim.find (params[:id])
+    @claim.update(claim_params)
+    redirect_to '/welcome_lawyer'
+  end
+
   private
   # To make clear which methods respond to requests, and which ones do not.
   def claim_params
-    params.require(:claim).permit(:fname, :lname, :bday, :claimTypes, :description, :lawyers_id, :users_id).merge(users_id: session[:user_id])
+    params.require(:claim).permit(:fname, :lname, :bday, :claimTypes, :description, :lawyers_id, :users_id, :progress).merge(users_id: session[:user_id])
   end
 end

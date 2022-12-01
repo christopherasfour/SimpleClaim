@@ -6,7 +6,32 @@
 <% end %>
 <br>
 
-<%= stylesheet_link_tag 'main', media: 'all', 'data-turbolinks-track': 'reload'  %>
+
+<%= stylesheet_link_tag 'main', media: 'all', 'ta-turbolinks-track': 'reload'  %>
+
+<% if current_user.nil? %>
+  <%= form_tag update_claim_progress_path(@claim), method: :put, :class => 'claimform' do %>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="<%= @claim.progress_percentage %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= @claim.progress_percentage %>%">
+        <%= @claim.progress_percentage %> %
+      </div>
+    </div>
+    <%= label :claim, :progress, 'Select the progress for the claim', :class => 'col-form-label' %>
+    <%= select :claim, :progress, [
+          "Started claim",
+          "File a claim with the court",
+          "Send the filed claim to the defendant (serve to defendant)",
+          "Get a court date",
+          "Prepare your paperwork",
+          "Go to court",
+          "Get judgment (on day of or in a month)",
+          "Collect/pay restitution"
+      ], {:style => 'width:200px !important'}, {:class => 'form-control col-1'} %>
+      <%= submit_tag 'Update Progress', :class => 'btn btn-success' %>
+      
+  <% end %>
+<% end %>
+
 <%= form_tag update_claim_path(@claim), method: :put, :class => 'claimform' do %>
   <%= label :claim, :fname, 'First Name:', :class => 'col-form-label' %>
   <%= text_field :claim, :fname, :class => 'form-control',  :required => true %>
