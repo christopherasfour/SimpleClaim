@@ -38,7 +38,7 @@ class ClaimController < ApplicationController
 
   def update_claim_progress
     @claim = Claim.find (params[:id])
-    @claim.update(claim_params)
+    @claim.update(progress: params[:claim][:progress])
     redirect_to '/welcome_lawyer'
   end
 

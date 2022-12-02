@@ -4,7 +4,7 @@ class Claim < ActiveRecord::Base
     validates :fname, :lname, :bday, :claimTypes, :description, presence: true
 
     def progress_percentage
-      (progress_list.index(self.progress) + 1).to_f / progress_list.length() * 100
+      return self.progress.nil? ? 0 : (progress_list.index(self.progress) + 1).to_f / progress_list.length() * 100
     end
 
     def progress_list
