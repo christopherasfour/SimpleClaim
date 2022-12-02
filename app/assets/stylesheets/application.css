@@ -47,3 +47,22 @@
   h1#welcome_lawyer_text {
     text-align: center;
   }
+  h1#index_welcome {
+    color: white;
+  }
+  h1#login_text {
+    color: white;
+  }
+  h1#lawyer_login_text {
+    color: white;
+  }
+  h1#lawyer_register_text {
+    color: white;
+  }
+  h1#user_register_text {
+    color: white;
+  }
+
+
+
+ 
