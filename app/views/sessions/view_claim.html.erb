@@ -68,31 +68,39 @@
   <% end %>
 <% end %>
 
-<table class="table table-striped col-md-12" id="lawyers">
-  <thead>
-    <tr>
-      <th>Lawyer ID</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>About Me</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% Lawyer.all.each do |lawyer| %>
+<% if not current_user.nil? %>
+
+  <table class="table table-striped col-md-12" id="lawyers">
+    <thead>
       <tr>
-        <td>
-          <%= lawyer.id %>
-        </td>
-        <td>
-          <%= lawyer.fname %>
-        </td>
-        <td>
-          <%= lawyer.lname %>
-        </td>
-        <td>
-          <%= lawyer.aboutMe %>
-        </td>
+        <th>Lawyer ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>About Me</th>
+        <th>Win Rate %</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% Lawyer.all.each do |lawyer| %>
+        <tr>
+          <td>
+            <%= lawyer.id %>
+          </td>
+          <td>
+            <%= lawyer.fname %>
+          </td>
+          <td>
+            <%= lawyer.lname %>
+          </td>
+          <td>
+            <%= lawyer.aboutMe %>
+          </td>
+          <td>
+            <%= lawyer.winRate %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+

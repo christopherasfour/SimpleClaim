@@ -12,10 +12,20 @@ class LawyersController < ApplicationController
   #     @lawyers = Lawyer.find(params[:id])
   # end
 
+  def age(dob)
+    now = Time.now.utc.to_date
+    now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
+  end
+
   def create
-    @lawyers = Lawyer.create!(lawyer_params)
-    session[:lawyer_id] = @lawyers.id
-    redirect_to '/welcome_lawyer'
+    if (age(DateTime.parse(params[:lawyer][:bday])) < 18 ) 
+      flash[:notice] = "Please input a valid birthday."
+      redirect_to '/register_lawyer'
+    else
+      @lawyers = Lawyer.create!(lawyer_params)
+      session[:lawyer_id] = @lawyers.id
+      redirect_to '/welcome_lawyer'
+    end
   end
 
   # def edit

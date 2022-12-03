@@ -1,8 +1,11 @@
 <% if logged_in? %>
-    <h1 id="welcome_text" Welcome <%= current_user.username %></h1>
-
+    <h1 id="welcome_text"> Welcome <%= current_user.username %></h1>
+    <br><br>
+    <div class="text-center">
+    <%= link_to 'Start a Small Claim', claim_path, id: "small_claim_button", :class => 'btn btn-primary' %>
+    </div>
     <br>
-    <%= link_to 'Start a Small Claim', claim_path, :class => 'btn btn-primary' %>
+    <br>
 
     <table class="rwd-table" id="claims">
     <thead>

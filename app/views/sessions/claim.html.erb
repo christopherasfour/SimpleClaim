@@ -1,4 +1,4 @@
-<h1>File a Small Claim</h1>
+<h1 id="file_claim">File a Small Claim</h1>
 <br>
 
 <%= stylesheet_link_tag 'main', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -56,6 +56,9 @@
         </td>
         <td>
           <%= lawyer.aboutMe %>
+        </td>
+        <td>
+          <%= lawyer.winRate %>
         </td>
       </tr>
     <% end %>

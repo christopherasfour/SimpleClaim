@@ -23,21 +23,21 @@
         <div class="info">
           <%= form_for @lawyers do |f|%>
             <%= f.label :username%><br>
-            <%= f.text_field :username%><br>
+            <%= f.text_field :username, :required => true %><br>
             <%= f.label :password%><br>
-            <%= f.password_field :password%><br>
+            <%= f.password_field :password, :required => true%><br>
             <%= f.label "First Name"%><br>
-            <%= f.text_field :fname%><br>
+            <%= f.text_field :fname, :required => true %><br>
             <%= f.label "Last Name"%><br>
-            <%= f.text_field :lname%><br>
+            <%= f.text_field :lname, :required => true %><br>
             <%= f.label "Birthday"%><br>
-            <%= f.date_field :bday%><br>
+            <%= f.date_field :bday, :required => true %><br>
             <%= f.label "Location"%><br>
-            <%= f.text_field :location%><br>
+            <%= f.text_field :location, :required => true %><br>
             <%= f.label "Highest Education"%><br>
-            <%= f.text_field :education%><br>
+            <%= f.text_field :education, :required => true%><br>
             <%= f.label "Win Rate of Cases"%><br>
-            <%= f.text_field :winRate%><br>
+            <%= f.text_field :winRate, :required => true%><br>
             <%= f.submit %>
           <%end%>
         </div>

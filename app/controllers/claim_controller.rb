@@ -1,3 +1,4 @@
+require 'date'
 
 class ClaimController < ApplicationController 
   # def index
@@ -10,10 +11,20 @@ class ClaimController < ApplicationController
   def show
   end
 
+def age(dob)
+  now = Time.now.utc.to_date
+  now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
+end
+
   def create
-    @claim = Claim.create!(claim_params)
-    flash[:notice] = "Claim of type #{@claim.claimTypes} was successfully created."
-    redirect_to '/welcome'   
+    if (age(DateTime.parse(params[:claim][:bday])) < 18 ) 
+      flash[:notice] = "Please input a valid birthday."
+      redirect_to '/claim'
+    else
+      @claim = Claim.create!(claim_params)
+      flash[:notice] = "Claim of type #{@claim.claimTypes} was successfully created."
+      redirect_to '/welcome'
+    end     
   end
 
   def update
