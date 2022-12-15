@@ -106,3 +106,18 @@ Scenario: lawyer can see previous claims that do not belong to them
 
 Scenario: There are 12 different types of claim
   Then I should see 12 claimTypes
+
+Scenario: There are 8 different progresses of claims
+  Then I should see 8 progresses
+
+Scenario: lawyer can edit progress of claim 
+   Given an existing lawyer with username aaa and password aaa
+   Then I should be on ./welcome_lawyer
+   And I should see "Loss Pick"
+   Then I press "Accept"
+   Then I should be on ./welcome_lawyer
+   When I press "View Claim"
+   And I select "Get a court date" from "claim_progress" 
+   And I press "Update Progress"
+   Then I should be on ./welcome_lawyer
+

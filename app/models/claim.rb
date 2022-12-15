@@ -3,11 +3,7 @@ class Claim < ActiveRecord::Base
     belongs_to :user
     validates :fname, :lname, :bday, :claimTypes, :description, presence: true
 
-    def progress_percentage
-      return self.progress.nil? ? 0 : (progress_list.index(self.progress) + 1).to_f / progress_list.length() * 100
-    end
-
-    def progress_list
+    def self.progress_list
       [
         "Started claim",
         "File a claim with the court",
@@ -36,4 +32,10 @@ class Claim < ActiveRecord::Base
             "Counterclaims to a lawsuit"
         ]
     end
+
+    def progress_percentage
+      return self.progress.nil? ? 0 : (Claim.progress_list.index(self.progress) + 1).to_f / Claim.progress_list.length() * 100
+    end
+
+  
 end

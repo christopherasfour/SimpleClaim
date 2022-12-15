@@ -40,6 +40,10 @@ end
 Then /I should see (.*) claimTypes/ do |num|
   expect(Claim.types.length).to eq num.to_i
 end
+
+Then /I should see (.*) progresses/ do |num|
+  expect(Claim.progress_list.length).to eq num.to_i
+end
 #We should write steps for creating a claim, (name, age, type of claim, ...)
 
 # Given /the following movies exist/ do |movies_table|
