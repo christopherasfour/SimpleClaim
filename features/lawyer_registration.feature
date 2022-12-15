@@ -42,3 +42,17 @@ Scenario: lawyer registration is successful test two
   And I fill in "lawyer_winRate" with "92"
   When I press "Create Lawyer"
   Then I should be on ./welcome_lawyer
+
+Scenario: lawyer registration is successful test three
+  When I go to ./register_lawyer
+  When I fill in "lawyer_username" with "Tomname"
+  And I fill in "lawyer_password" with "Tompassword"
+  And I fill in "lawyer_fname" with "Tom"
+  And I fill in "lawyer_lname" with "Brady"
+  And I fill in "lawyer_bday" with "11/10/2008"
+  And I fill in "lawyer_location" with "New York"
+  And I fill in "lawyer_education" with "Cornell University"
+  And I fill in "lawyer_winRate" with "92"
+  When I press "Create Lawyer"
+  Then I should be on ./register_lawyer
+

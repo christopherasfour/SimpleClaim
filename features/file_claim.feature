@@ -38,6 +38,19 @@ Scenario: user fills all fields in the claim process.
   And I press "Create New Claim"
   Then I should be on ./welcome
 
+Scenario: user fills all fields in the claim process with invalid birthday.
+  Given an existing user with username Bob and password tester
+  When I go to ./claim
+  And I fill in "claim_fname" with "Bob"
+  And I fill in "claim_lname" with "Joe"
+  And I fill in "claim_bday" with "11/10/2009"
+  And I select "False arrest claims" from "claim_claimTypes"
+  And I select "Jason Lonet" from "claim_lawyers_id"
+  And I fill in "claim_description" with "I need help filing a small claim"
+  And I press "Create New Claim"
+  Then I should be on ./claim
+
+
 Scenario: user sees newly filed claim.
   Given an existing user with username Bob and password tester
   When I go to ./claim
