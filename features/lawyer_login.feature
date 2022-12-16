@@ -26,6 +26,7 @@ Scenario: lawyer login is successful
   And I fill in "lawyer_password" with "tester"
   And I fill in "lawyer_fname" with "bob"
   And I fill in "lawyer_lname" with "aaa"
+  And I fill in "lawyer_email" with "bob@abc.com"
   And I fill in "lawyer_bday" with "11/10/1990"
   And I fill in "lawyer_location" with "California"
   And I fill in "lawyer_education" with "Columbia University"

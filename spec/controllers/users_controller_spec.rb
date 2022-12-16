@@ -32,7 +32,7 @@ RSpec.describe UsersController, :type => :controller do
   describe "POST create" do
     context "with valid attributes" do
       it "is valid with both fields" do
-        expect {post :create, {user: {username: "validusername", password: "validpassword"}}
+        expect {post :create, {user: {username: "validusername", password: "validpassword", email: "abc@client.com"}}
       }.to change { User.count }.by(1)
         assert_redirected_to "/welcome"
       end

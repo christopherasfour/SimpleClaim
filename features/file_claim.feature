@@ -116,7 +116,7 @@ Scenario: lawyer can edit progress of claim
    And I should see "Loss Pick"
    Then I press "Accept"
    Then I should be on ./welcome_lawyer
-   When I press "View Claim"
+   When I follow "View Claim"
    And I select "Get a court date" from "claim_progress" 
    And I press "Update Progress"
    Then I should be on ./welcome_lawyer

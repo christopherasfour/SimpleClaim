@@ -38,5 +38,6 @@ Scenario: user login is successful
   And I should be on ./register
   When I fill in "user_username" with "Bob"
   And I fill in "user_password" with "tester"
+  And I fill in "user_email" with "bob@abc.com"
   And I press "Create User"
   Then I should be on ./welcome

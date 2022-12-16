@@ -15,6 +15,7 @@
         <th align="center">Claim Type</th>
         <th align="center">Description</th>
         <th align="center">Advising Lawyer</th>
+        <th align="center">Email Lawyer</th>
         </tr>
     </thead>
     <tbody>
@@ -40,6 +41,13 @@
             <% else %>
                 <%= "Rejected by " + Lawyer.find(claim.lawyers_id).fname + " " + Lawyer.find(claim.lawyers_id).lname %>
             <% end %>
+            </td>
+            <td>
+            <% if not current_user.nil?%>
+                <% if claim.decision == 1 %>
+                <%= link_to 'Email Me', "mailto:#{Lawyer.find_by(id: claim.lawyers_id).email}", :class => 'btn btn-warning', :subject => "Claim" %>
+                <% end %>
+            <%end%>
             </td>
         </tr>
         <% end %>

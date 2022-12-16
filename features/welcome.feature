@@ -24,6 +24,7 @@ Scenario: user is logged in
   And I should be on ./register
   When I fill in "user_username" with "Bob"
   And I fill in "user_password" with "tester"
+  And I fill in "user_email" with "abc@gmail.com"
   And I press "Create User"
   Then I should be on ./welcome
   Then I should see "Welcome Bob"
@@ -34,6 +35,7 @@ Scenario: user can log out
   And I should be on ./register
   When I fill in "user_username" with "Bob"
   And I fill in "user_password" with "tester"
+  And I fill in "user_email" with "abc@gmail.com"
   And I press "Create User"
   Then I should be on ./welcome
   When I press "Log out"
@@ -45,6 +47,7 @@ Scenario: user number one can go to claim form page
   And I should be on ./register
   When I fill in "user_username" with "Bob"
   And I fill in "user_password" with "tester"
+  And I fill in "user_email" with "bob@abc.com"
   And I press "Create User"
   Then I should be on ./welcome
   When I follow "Start a Small Claim"
@@ -56,6 +59,7 @@ Scenario: user number two can go to claim form page
   And I should be on ./register
   When I fill in "user_username" with "columbiauserone"
   And I fill in "user_password" with "bearlions"
+  And I fill in "user_email" with "columbiauserone@abc.com"
   And I press "Create User"
   Then I should be on ./welcome
   When I follow "Start a Small Claim"

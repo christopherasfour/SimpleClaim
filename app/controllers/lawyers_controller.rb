@@ -19,9 +19,16 @@ class LawyersController < ApplicationController
     now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
   end
 
+  def is_a_valid_email?(email)
+    email =~ /\A[^@\s]+@[^@\s]+\z/
+  end
+
   def create
-    if (age(DateTime.parse(params[:lawyer][:bday])) < 18)
-      flash[:notice] = "Please input a valid birthday."
+    if (!is_a_valid_email?(params[:lawyer][:email]))
+      flash[:warning] = "Please input a valid email address."
+      redirect_to '/register_lawyer'
+    elsif (age(DateTime.parse(params[:lawyer][:bday])) < 18)
+      flash[:warning] = "Please input a valid birthday."
       redirect_to '/register_lawyer'
     else
       @lawyers = Lawyer.create!(lawyer_params)
@@ -47,6 +54,6 @@ class LawyersController < ApplicationController
   private
   # To make clear which methods respond to requests, and which ones do not.
   def lawyer_params
-      params.require(:lawyer).permit(:fname, :lname, :bday, :location, :education, :winRate, :aboutMe, :username, :password)
+      params.require(:lawyer).permit(:fname, :lname, :bday, :location, :education, :winRate, :aboutMe, :username, :password, :email)
   end
 end

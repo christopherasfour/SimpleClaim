@@ -9,5 +9,6 @@ FactoryBot.define do
       aboutMe {'My name is Jason. Hello!'}
       username {'laywer1'}
       password {'pass'}
+      email {'abc@gmail.com'}
     end
   end
