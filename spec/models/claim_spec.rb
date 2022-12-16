@@ -52,4 +52,9 @@ RSpec.describe Claim do
       ]
     )
   end
+
+  it 'returns 0 progress' do 
+    claim = Claim.create(FactoryBot.attributes_for(:claim))
+    expect(claim.progress_percentage).to eql(0)
+  end
 end

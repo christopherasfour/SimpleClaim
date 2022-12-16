@@ -96,6 +96,35 @@ RSpec.describe ClaimController, :type => :controller do
       end
     end
 
+    describe "Update progress by id" do 
+      let(:claim) { FactoryBot.create(:claim) }
+      before(:each) do
+        session = { user_id: 11 }
+        allow_any_instance_of(SessionsController).to receive(:session).and_return(session)
+        allow_any_instance_of(ApplicationController).to receive(:logged_in?).and_return(true)
+        put :update_claim_progress, id: claim.id, claim: {progress: 'Go to court'}
+      end
+
+      it 'has updated progress' do
+        claim.reload
+        expect(claim.progress).to eql('Go to court')
+      end
+    end
+
+    describe "POST create for user id 12 with age 1" do
+      context "with valid attributes" do
+        it "is valid with valid attributes" do
+          session = { user_id: 12 }
+          claim = FactoryBot.attributes_for(:claim)
+          claim[:bday] = '09-04-2021'
+          allow_any_instance_of(SessionsController).to receive(:session).and_return(session)
+          allow_any_instance_of(ApplicationController).to receive(:logged_in?).and_return(true)
+          expect {post :create, claim: claim
+          }.to change { Claim.count }.by(0)
+        end
+      end
+    end
+
     describe "PUT update for user id 12 instance of decision to 1" do
       let(:claim) { FactoryBot.create(:claim) }
       before(:each) do

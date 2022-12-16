@@ -1,3 +1,5 @@
+require 'date'
+
 class LawyersController < ApplicationController 
   skip_before_action :authorized, only: [:create, :new, :destroy]
   # def index
@@ -18,7 +20,7 @@ class LawyersController < ApplicationController
   end
 
   def create
-    if (age(DateTime.parse(params[:lawyer][:bday])) < 18 ) 
+    if (age(DateTime.parse(params[:lawyer][:bday])) < 18)
       flash[:notice] = "Please input a valid birthday."
       redirect_to '/register_lawyer'
     else
