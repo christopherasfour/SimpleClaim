@@ -37,4 +37,19 @@ RSpec.describe Claim do
       ])
     end
   end
+
+  it 'returns all progress_list' do
+    expect(Claim.progress_list).to eql(
+      [
+        "Started claim",
+        "File a claim with the court",
+        "Send the filed claim to the defendant (serve to defendant)",
+        "Get a court date",
+        "Prepare your paperwork",
+        "Go to court",
+        "Get judgment (on day of or in a month)",
+        "Collect/pay restitution",
+      ]
+    )
+  end
 end
