@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 users = [
-  {username: 'testuser111', password: 'testingpassword'},
-  {username: 'testuser222', password: 'llll'},
+  {username: 'testuser111', password: 'testingpassword', email: 'client@abc.com'},
+  {username: 'testuser222', password: 'llll', email: 'client@abc.com'},
 ]
 
 users_id = []
@@ -19,9 +19,9 @@ users.each do |user|
 end
 
 lawyers = [
-  { fname: 'Jason', lname: 'Lonet', bday: '21-Apr-1989', location: 'Simi Valley', education: 'Columbia University', winRate: 89.10 , aboutMe: "Jason Lonet has over 20 years of experience negotiating technology transactions and outsourcing agreements. He has represented both technology consumers and vendors – including significant outsourcing arrangements for major healthcare providers, utilities, a Big Four accounting firm, and one of the world’s largest financial institutions. He has also represented a variety of service providers, including a top-ten consulting firm, market leaders in network security software and credit card processing, broadcast networks, numerous software developers, as well firms providing customer care, patient records and video processing services.", username: 'laywer1', password: 'pass'},
-  { fname: 'Mark', lname: 'Smith', bday: '21-Aug-1999', location: 'Jacksonville', education: 'Harvard University', winRate: 75.55, aboutMe: "Mark Smith has over ten years of experience in the field. His tactical and business-focused approach resolves highly contentious executive compensation, non-compete, and discrimination claims for a fraction of the cost. He also frequently conducts internal investigations of misconduct and discrimination claims and regulatory violations, working with clients to get them their due.", username: 'laywer2', password: 'word'},
-  { fname: 'Justin', lname: 'Fields', bday: '11-Sep-2005', location: 'Redville', education: 'Cornell University', winRate: 95.11, aboutMe: "Justin Fields is an attorney who cares — about his clients and his community. His professional and personal philosophy includes giving back in ways that make a meaningful difference to the local and global communities to which he dedicates her practice. Justin is a firm believer in Gandhi’s idea of being the change you want to see in the world.", username: 'lawyer3', password: 'password'},
+  { fname: 'Jason', lname: 'Lonet', bday: '21-Apr-1989', location: 'Simi Valley', education: 'Columbia University', winRate: 89.10 , aboutMe: "Jason Lonet has over 20 years of experience negotiating technology transactions and outsourcing agreements. He has represented both technology consumers and vendors – including significant outsourcing arrangements for major healthcare providers, utilities, a Big Four accounting firm, and one of the world’s largest financial institutions. He has also represented a variety of service providers, including a top-ten consulting firm, market leaders in network security software and credit card processing, broadcast networks, numerous software developers, as well firms providing customer care, patient records and video processing services.", username: 'laywer1', password: 'pass', email: 'jasonlonet@xyz.com'},
+  { fname: 'Mark', lname: 'Smith', bday: '21-Aug-1999', location: 'Jacksonville', education: 'Harvard University', winRate: 75.55, aboutMe: "Mark Smith has over ten years of experience in the field. His tactical and business-focused approach resolves highly contentious executive compensation, non-compete, and discrimination claims for a fraction of the cost. He also frequently conducts internal investigations of misconduct and discrimination claims and regulatory violations, working with clients to get them their due.", username: 'laywer2', password: 'word', email: "abc@abc.com"},
+  { fname: 'Justin', lname: 'Fields', bday: '11-Sep-2005', location: 'Redville', education: 'Cornell University', winRate: 95.11, aboutMe: "Justin Fields is an attorney who cares — about his clients and his community. His professional and personal philosophy includes giving back in ways that make a meaningful difference to the local and global communities to which he dedicates her practice. Justin is a firm believer in Gandhi’s idea of being the change you want to see in the world.", username: 'lawyer3', password: 'password', email: "abc@abc.com"},
 ]
 
 ids = []

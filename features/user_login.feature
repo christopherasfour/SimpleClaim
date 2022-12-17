@@ -25,6 +25,7 @@ Scenario: user login is successful
   When I go to /register
   When I fill in "user_username" with "Bob"
   When I fill in "user_password" with "tester"
+  When I fill in "user_email" with "abc@gmail.com"
   And I press "Create User"
   When I go to /login
   When I fill in "username" with "Bob"
