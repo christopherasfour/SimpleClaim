@@ -22,8 +22,8 @@ RSpec.describe UsersController, :type => :controller do
   end
   describe "POST create" do
     context "with valid attributes" do
-      it "is invalid with just username field" do
-        expect {post :create, {user: {username: "justusername", password: ""}}
+      it "is invalid with no email field" do
+        expect {post :create, {user: {username: "justusername", password: "validpassword"}}
         }.to change { User.count }.by(0)
         assert_redirected_to "/register"
       end
@@ -35,6 +35,16 @@ RSpec.describe UsersController, :type => :controller do
         expect {post :create, {user: {username: "validusername", password: "validpassword", email: "abc@client.com"}}
       }.to change { User.count }.by(1)
         assert_redirected_to "/welcome"
+      end
+    end
+  end
+
+  describe "POST create" do
+    context "with valid attributes" do
+      it "is invalid with email" do
+        expect {post :create, {user: {username: "", password: "", email: "abc@gmail.com"}}
+      }.to change { User.count }.by(0)
+        assert_redirected_to "/register"
       end
     end
   end
