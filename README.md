@@ -40,7 +40,7 @@ Main features all completed. Acquired 100% Cucumber and 100% Rspec test coverage
 
 ## Heroku link
 ```
-https://frozen-scrubland-48491.herokuapp.com/
+https://still-basin-90811.herokuapp.com/
 ```
 
 ## Test Scenarios to evaluate and test our product for final launch:
