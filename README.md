@@ -77,6 +77,16 @@ https://still-basin-90811.herokuapp.com/
 ### Scenario 5: Be linked out to email client or lawyer
 1. Enter in your browser the above heroku link.
 2. Login to a client or lawyer account with claims made or acknowledged.
-3. You should see a button that says "Email [Lawyer's First Name]" if you are a client,
-   You should see a button that says "Email [Client's First Name]" if you are a lawyer
-4. Once clicked, you should be linked to your browser's default email with the lawyers email listed in the "To:" field
+3. a) If logged in as a client with claims that are still pending a decision by a lawyer, you will see a lock icon. Once lawyer accepts the claim, you should see a button that says "Email [Lawyer's First Name]". 
+   b) If logged in as a lawyer with claims initially assigned to you, you should see a button that says "Email [Client's First Name]". 
+4. Once clicked, you should be linked to your browser's default email provider with the lawyers email listed in the "To:" field
+
+### Scenario 6: Update progress of claim as lawyer
+1. Enter in your browser the above heroku link.
+2. Login to a lawyer account with claims acknowledged.
+3. Click on the claim link.
+4. Select progress drop-down field and select new field.
+5. Click the "Update Progress" button.
+6. Logout and log in as a client of the claim
+7. You should see updated progress bar of the claim
+8. Done!
